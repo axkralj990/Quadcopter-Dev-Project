@@ -17,9 +17,11 @@ import sys
 from PyQt4 import QtGui, QtCore
 import pyqtgraph as pg
 import numpy as np
+import serial
+import time
 
 #Set up a class for drawing a user interface
-class Interface(QtGui.QWidget):
+class Interface(QtGui.QMainWindow):
     #define contstucotr method
     def __init__(self):
         super(Interface,self).__init__()
@@ -29,9 +31,12 @@ class Interface(QtGui.QWidget):
     #define initUI method
     def initUI(self):
         #SET GEOMETRY=========================================================
-        self.setGeometry(300,300,640,640)
+        self.resize(640,640)
         self.setWindowTitle("Arduino Serial Graph (single value)")
+        self.initializeSerial()
+        self.createMainFrame()
         
+    def createMainFrame(self):
         #LAYOUT CONTROL=======================================================
         grid = QtGui.QGridLayout()
         self.setLayout(grid)
@@ -43,24 +48,45 @@ class Interface(QtGui.QWidget):
         comPortLE = QtGui.QLineEdit(self)
         comPortLE.textChanged.connect(self.comPortChanged)
         
-        #FREEZE BUTTON
-        freeze = QtGui.QPushButton("Freeze Graph")
-        
+        #START BUTTON
+        start = QtGui.QPushButton("START")
+        start.clicked.connect(self.readArduino)
+
+
         #GRAPH
-        graph = pg.PlotWidget(title="Arduino Serial Data")
+        self.graph = pg.PlotWidget(title="Arduino Serial Data")
         
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(comPortLabel,0,1,1,1)
         grid.addWidget(comPortLE,0,2,1,1)
-        grid.addWidget(freeze,0,0,1,1)
-        grid.addWidget(graph,2,0,1,3)
-        
-        self.show()
+        grid.addWidget(start,0,0,1,1)
+        grid.addWidget(self.graph,2,0,1,3) 
+        self.mainFrame = QtGui.QWidget()
+        self.mainFrame.setLayout(grid)
+        self.setCentralWidget(self.mainFrame)
         
     def comPortChanged(self,text):
         if (len(text) == 4):
             comPort=text
             print(comPort)
+            
+    def initializeSerial(self):
+        self.ser = serial.Serial("COM4",9600)
+        
+    def readArduino(self):
+        data = [0,0]
+        while float(data[0])<1000:
+            values = []
+            timeV = []
+            for i in range(0,50):
+                r_data = self.ser.readline()
+                data = r_data.split(" ",2)
+                values.append(float(data[0]))
+                timeV.append(float(data[1]))
+            print("data: " + str(values) + " time: " + str(timeV))
+            self.graph.plotItem.plot(timeV,values)
+            time.sleep(0.1)
+            
         
 #Define main() function
 def main():
@@ -68,6 +94,7 @@ def main():
     app = QtGui.QApplication(sys.argv)
     #construct an object from interface class
     arduino_data = Interface()
+    arduino_data.show()
     #exit system
     sys.exit(app.exec_())
     
