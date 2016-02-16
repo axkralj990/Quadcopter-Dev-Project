@@ -33,7 +33,8 @@ class DataMonitor(QtGui.QMainWindow):
         self.ptimeV=0
         self.pvalue=0
         self.timeV=0
-        self.value=0        
+        self.value=0
+        self.samples = []        
         
     #define initUI method
     def initUI(self):
@@ -62,8 +63,9 @@ class DataMonitor(QtGui.QMainWindow):
         
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Monitor")
-        self.graph.setBackground('w')
-        self.graph.setLineWidth(2)
+        self.graph.setBackground('k')
+        self.graph.setLineWidth(5)
+        self.curve = self.graph.plotItem.plot(pen='g')
         
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
@@ -105,7 +107,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.update_monitor()
         
     def onClear(self):
-        self.graph.clear()
+        self.graph.plotItem.clear()
         
     def read_serial_data(self):
         #print("Reading Serial Data")
@@ -142,10 +144,18 @@ class DataMonitor(QtGui.QMainWindow):
                 print("============NOT A FLOAT=============")
                 self.timeV = 0
                 self.value = 0
-            self.graph.setXRange(self.timeV-5,self.timeV+5)
-            self.graph.plotItem.plot([self.ptimeV,self.timeV],[self.pvalue,self.value],pen='b')
+            self.samples.append((self.timeV,self.value))
+            if len(self.samples) > 1000:
+                self.samples.pop(0)
+                
+            tdata = [s[0] for s in self.samples]
+            sensorData = [s[1] for s in self.samples]
+            #print("tdata: ")
+            #print(sensorData)
+            self.graph.setXRange(self.timeV-10,self.timeV)
+            #self.curve.setData([self.ptimeV,self.timeV],[self.pvalue,self.value])
+            self.curve.setData(tdata,sensorData)
             
-        
 #Define main() function
 def main():
     #start QT application
