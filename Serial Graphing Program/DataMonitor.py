@@ -62,6 +62,8 @@ class DataMonitor(QtGui.QMainWindow):
         
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Monitor")
+        self.graph.setBackground('w')
+        self.graph.setLineWidth(2)
         
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
@@ -141,7 +143,7 @@ class DataMonitor(QtGui.QMainWindow):
                 self.timeV = 0
                 self.value = 0
             self.graph.setXRange(self.timeV-5,self.timeV+5)
-            self.graph.plotItem.plot([self.ptimeV,self.timeV],[self.pvalue,self.value])
+            self.graph.plotItem.plot([self.ptimeV,self.timeV],[self.pvalue,self.value],pen='b')
             
         
 #Define main() function
