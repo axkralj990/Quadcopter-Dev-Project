@@ -48,6 +48,7 @@ class DataMonitor(QtGui.QMainWindow):
         
         self.start_btn.clicked.connect(self.onStart)
         self.stop_btn.clicked.connect(self.onStop)
+        self.clr_btn.clicked.connect(self.onClear)
         
     def createMainFrame(self):
         #LAYOUT CONTROL=======================================================
@@ -57,7 +58,7 @@ class DataMonitor(QtGui.QMainWindow):
         #START/STOP BUTTON
         self.start_btn = QtGui.QPushButton("START")
         self.stop_btn = QtGui.QPushButton("STOP")
-
+        self.clr_btn = QtGui.QPushButton("CLEAR PLOT")
         
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Monitor")
@@ -65,7 +66,8 @@ class DataMonitor(QtGui.QMainWindow):
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
         grid.addWidget(self.stop_btn,1,0,1,3)
-        grid.addWidget(self.graph,2,0,1,3) 
+        grid.addWidget(self.clr_btn,2,0,1,3)
+        grid.addWidget(self.graph,3,0,1,3) 
         self.mainFrame = QtGui.QWidget()
         self.mainFrame.setLayout(grid)
         self.setCentralWidget(self.mainFrame)
@@ -76,6 +78,7 @@ class DataMonitor(QtGui.QMainWindow):
         print("starting")
         self.start_btn.setEnabled(False)
         self.stop_btn.setEnabled(True)
+        #self.graph.clear()
         
         self.data_q = Queue.Queue()
         
@@ -83,7 +86,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.com_monitor.start()        
         
         self.timer.timeout.connect(self.onTimer)
-        self.timer.start(50) 
+        self.timer.start(10) 
         
     def onStop(self):
         print("stopping")
@@ -92,26 +95,32 @@ class DataMonitor(QtGui.QMainWindow):
         
         self.timer.stop()
         self.com_monitor.join(0.01)
-        self.graph.clear()        
+                
         
     def onTimer(self):
         #print("timer")
         self.read_serial_data()
         self.update_monitor()
-
+        
+    def onClear(self):
+        self.graph.clear()
         
     def read_serial_data(self):
         #print("Reading Serial Data")
+        #print("SIZE_BEFORE: ")
+        #print(self.data_q.qsize())
         qdata = list(get_all_from_queue(self.data_q))
-        #qdata = [500,222]
+        #print("SIZE_AFTER: ")
+        #print(self.data_q.qsize())
+        
         if len(qdata) > 0:
             #print("FINAL")
             #data = dict(timestamp=qdata[-1][1], 
             #            value=qdata[-1][0])
             self.data = qdata
             self.livefeed.add_data(self.data)
-            print(self.livefeed.has_new_data)
-            print(qdata)
+            #print(self.livefeed.has_new_data)
+            #print(qdata)
             
             
     def update_monitor(self):
@@ -121,11 +130,17 @@ class DataMonitor(QtGui.QMainWindow):
             self.ptimeV = self.timeV
             self.pvalue = self.value
             self.data = self.livefeed.read_data()
-            print("DATA: ")
-            print(float(self.data[0][1]))
-            print(float(self.data[0][0]))
-            self.timeV = float(self.data[0][1])
-            self.value = float(self.data[0][0])
+            #print("DATA: ")
+            #print(float(self.data[0][1]))
+            #print(float(self.data[0][0]))
+            try:
+                self.timeV = float(self.data[0][1])
+                self.value = float(self.data[0][0])
+            except ValueError:
+                print("============NOT A FLOAT=============")
+                self.timeV = 0
+                self.value = 0
+            self.graph.setXRange(self.timeV-5,self.timeV+5)
             self.graph.plotItem.plot([self.ptimeV,self.timeV],[self.pvalue,self.value])
             
         

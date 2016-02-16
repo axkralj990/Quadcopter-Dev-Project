@@ -25,7 +25,7 @@ class ComMonitorThread(threading.Thread):
         self.alive.set()
         
     def getData(self):
-        print("getting data")
+        print("gd")
         
     def run(self):
         print("THREAD STARTED")
@@ -45,16 +45,20 @@ class ComMonitorThread(threading.Thread):
         while self.alive.isSet():
             Line = self.serial_port.readline()
             #qdataW = float(Line)
-            qdataW = Line.decode("utf-8").rstrip('\r\n')
+            #qdataW = Line.decode("utf-8").rstrip('\r\n')
             qdata = qdata+7
-            print("LINE: ")
-            print(Line)
+            #print("LINE: ")
+            #print(Line)
             timeStamp = time.clock()
-            self.data_q.put((qdataW,timeStamp))
-            time.sleep(0.05)
+            self.data_q.put((Line,timeStamp))
+            time.sleep(0.01)
+            
+        if self.serial_port:
+            self.serial_port.close()
             
     def join(self,timeout=None):
         self.alive.clear()
+        self.serial_port.close()
         print("========THREAD CLEARED========")
         threading.Thread.join(self,timeout)
         

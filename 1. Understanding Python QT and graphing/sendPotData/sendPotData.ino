@@ -10,9 +10,9 @@ void setup() {
 void loop() {
   data = analogRead(potPin);
   time1 = millis();
-  Serial.print(data);
-  Serial.print(" ");
-  Serial.print(time1);
-  Serial.println(" ");
-  delay(50);
+  Serial.println(data);
+  //Serial.print(" ");
+  //Serial.print(time1);
+  //Serial.println(" ");
+  delay(10);
 }
