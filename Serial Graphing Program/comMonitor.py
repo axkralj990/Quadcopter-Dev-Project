@@ -29,16 +29,32 @@ class ComMonitorThread(threading.Thread):
         
     def run(self):
         print("THREAD STARTED")
-        startTime = time.time()
         
-        qdata = 99999
+        try:
+            if self.serial_port:
+                self.serial_port.close()
+            self.serial_port = serial.Serial(**self.serial_arg)
+        except serial.SerialException, e:
+            print(e.message)
+            return
+        
+        #startTime = time.time()
+        
+        qdata = 0
         
         while self.alive.isSet():
+            Line = self.serial_port.readline()
+            #qdataW = float(Line)
+            qdataW = Line.decode("utf-8").rstrip('\r\n')
+            qdata = qdata+7
+            print("LINE: ")
+            print(Line)
             timeStamp = time.clock()
-            self.data_q.put((qdata,timeStamp))
+            self.data_q.put((qdataW,timeStamp))
             time.sleep(0.05)
             
     def join(self,timeout=None):
         self.alive.clear()
+        print("========THREAD CLEARED========")
         threading.Thread.join(self,timeout)
         

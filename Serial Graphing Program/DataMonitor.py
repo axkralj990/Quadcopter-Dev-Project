@@ -42,7 +42,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.setWindowTitle("Arduino Serial Graph (single value)")
         self.createMainFrame()
         
-        self.comPort = "COM1"
+        self.comPort = "COM4"
         self.baudRate = "9600"
         self.timer = QtCore.QTimer()
         
@@ -92,39 +92,42 @@ class DataMonitor(QtGui.QMainWindow):
         
         self.timer.stop()
         self.com_monitor.join(0.01)
+        self.graph.clear()        
         
     def onTimer(self):
-        print("timer")
+        #print("timer")
         self.read_serial_data()
         self.update_monitor()
 
         
     def read_serial_data(self):
-        print("Reading Serial Data")
+        #print("Reading Serial Data")
         qdata = list(get_all_from_queue(self.data_q))
         #qdata = [500,222]
         if len(qdata) > 0:
-            print("FINAL")
+            #print("FINAL")
             #data = dict(timestamp=qdata[-1][1], 
             #            value=qdata[-1][0])
-            data = qdata
-            self.livefeed.add_data(data)
+            self.data = qdata
+            self.livefeed.add_data(self.data)
             print(self.livefeed.has_new_data)
+            print(qdata)
             
             
     def update_monitor(self):
-        print("Monitor:")
+        #print("Monitor:")
         if self.livefeed.has_new_data:
-            print("livefeed has DATA")
+            #print("livefeed has DATA")
             self.ptimeV = self.timeV
             self.pvalue = self.value
             self.data = self.livefeed.read_data()
-            print(self.data[0][1])
-            print(self.data[0][0])
-            self.timeV = self.data[0][1]
-            self.value = self.data[0][0]
+            print("DATA: ")
+            print(float(self.data[0][1]))
+            print(float(self.data[0][0]))
+            self.timeV = float(self.data[0][1])
+            self.value = float(self.data[0][0])
             self.graph.plotItem.plot([self.ptimeV,self.timeV],[self.pvalue,self.value])
-
+            
         
 #Define main() function
 def main():
