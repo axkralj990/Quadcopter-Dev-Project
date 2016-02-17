@@ -11,8 +11,5 @@ void loop() {
   data = analogRead(potPin);
   time1 = millis();
   Serial.println(data);
-  //Serial.print(" ");
-  //Serial.print(time1);
-  //Serial.println(" ");
   delay(10);
 }

@@ -63,8 +63,8 @@ class DataMonitor(QtGui.QMainWindow):
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Plot")
         self.graph.setBackground('k')
-        self.graph.setLineWidth(5)
-        self.curve = self.graph.plotItem.plot(pen='g')
+        self.curve = self.graph.plotItem.plot()
+        self.curve.setPen(color='g',width=2)
         
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
