@@ -40,7 +40,7 @@ class DataMonitor(QtGui.QMainWindow):
     def initUI(self):
         #SET GEOMETRY=========================================================
         self.resize(640,640)
-        self.setWindowTitle("Arduino Serial Graph (single value)")
+        self.setWindowTitle("Arduino Serial Monitor")
         self.createMainFrame()
         
         self.comPort = "COM4"
@@ -49,7 +49,7 @@ class DataMonitor(QtGui.QMainWindow):
         
         self.start_btn.clicked.connect(self.onStart)
         self.stop_btn.clicked.connect(self.onStop)
-        self.clr_btn.clicked.connect(self.onClear)
+        self.stop_btn.setEnabled(False)
         
     def createMainFrame(self):
         #LAYOUT CONTROL=======================================================
@@ -57,12 +57,11 @@ class DataMonitor(QtGui.QMainWindow):
         self.setLayout(grid)
         
         #START/STOP BUTTON
-        self.start_btn = QtGui.QPushButton("START")
-        self.stop_btn = QtGui.QPushButton("STOP")
-        self.clr_btn = QtGui.QPushButton("CLEAR PLOT")
+        self.start_btn = QtGui.QPushButton("Start")
+        self.stop_btn = QtGui.QPushButton("Stop")
         
         #GRAPH
-        self.graph = pg.PlotWidget(title="Serial Data Monitor")
+        self.graph = pg.PlotWidget(title="Serial Data Plot")
         self.graph.setBackground('k')
         self.graph.setLineWidth(5)
         self.curve = self.graph.plotItem.plot(pen='g')
@@ -70,19 +69,31 @@ class DataMonitor(QtGui.QMainWindow):
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
         grid.addWidget(self.stop_btn,1,0,1,3)
-        grid.addWidget(self.clr_btn,2,0,1,3)
-        grid.addWidget(self.graph,3,0,1,3) 
+        grid.addWidget(self.graph,2,0,1,3) 
         self.mainFrame = QtGui.QWidget()
         self.mainFrame.setLayout(grid)
         self.setCentralWidget(self.mainFrame)
         
-        #self.graph.plotItem.plot([1,2,3,4,5],[10,20,30,40,-10])
+        #STYLESHEET
+        self.start_btn.setStyleSheet("QPushButton {background-color: rgb(170,170,180);"
+                                    "border-radius: 4px;"
+                                    "border-style: solid;"
+                                    "border-color: black;"
+                                    "border-width: 1px;"
+                                    "font-size:20px;}")
+        self.stop_btn.setStyleSheet("QPushButton {background-color: rgb(170,170,180);"
+                                    "border-radius: 4px;"
+                                    "border-style: solid;"
+                                    "border-color: black;"
+                                    "border-width: 1px;"
+                                    "font-size:20px;}")
+        self.setStyleSheet("QMainWindow {background-color: rgb(60,60,70)}")
+        self.setWindowIcon(QtGui.QIcon('SP_logo.png'))
         
     def onStart(self):
         print("starting")
         self.start_btn.setEnabled(False)
         self.stop_btn.setEnabled(True)
-        #self.graph.clear()
         
         self.data_q = Queue.Queue()
         
@@ -105,9 +116,6 @@ class DataMonitor(QtGui.QMainWindow):
         #print("timer")
         self.read_serial_data()
         self.update_monitor()
-        
-    def onClear(self):
-        self.graph.plotItem.clear()
         
     def read_serial_data(self):
         #print("Reading Serial Data")
