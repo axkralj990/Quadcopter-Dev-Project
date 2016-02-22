@@ -66,6 +66,11 @@ class DataMonitor(QtGui.QMainWindow):
         self.curve = self.graph.plotItem.plot()
         self.curve.setPen(color='g',width=2)
         
+        #STATUS BAR
+        self.status_text = QtGui.QLabel("Monitor Idle")
+        self.statusBar().addWidget(self.status_text,1)
+        self.status_text.setStyleSheet("QLabel {color: rgb(0,255,0)}")
+        
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
         grid.addWidget(self.stop_btn,1,0,1,3)
@@ -104,7 +109,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.timer.start(10) 
         
     def onStop(self):
-        print("stopping")
+        self.status_text.setText("Monitor idle")
         self.start_btn.setEnabled(True)
         self.stop_btn.setEnabled(False)
         
@@ -126,30 +131,32 @@ class DataMonitor(QtGui.QMainWindow):
         #print(self.data_q.qsize())
         
         if len(qdata) > 0:
-            #print("FINAL")
-            #data = dict(timestamp=qdata[-1][1], 
-            #            value=qdata[-1][0])
             self.data = qdata
             self.livefeed.add_data(self.data)
-            #print(self.livefeed.has_new_data)
-            #print(qdata)
             
             
     def update_monitor(self):
         #print("Monitor:")
         if self.livefeed.has_new_data:
-            #print("livefeed has DATA")
             self.ptimeV = self.timeV
             self.pvalue = self.value
             self.data = self.livefeed.read_data()
-            #print("DATA: ")
-            #print(float(self.data[0][1]))
-            #print(float(self.data[0][0]))
+            '''
+            readings = self.data[0][0]
+            readings = readings.split()
+            print("DATA: ")
+            try:
+                self.value=float(readings[0])
+            except ValueError:
+                print("NOT A FLOAT")
+            '''
+                
             try:
                 self.timeV = float(self.data[0][1])
                 self.value = float(self.data[0][0])
+                self.status_text.setText("Receiving Data")
             except ValueError:
-                print("============NOT A FLOAT=============")
+                self.status_text.setText("Waiting for the data")
                 self.timeV = 0
                 self.value = 0
             self.samples.append((self.timeV,self.value))
@@ -158,10 +165,7 @@ class DataMonitor(QtGui.QMainWindow):
                 
             tdata = [s[0] for s in self.samples]
             sensorData = [s[1] for s in self.samples]
-            #print("tdata: ")
-            #print(sensorData)
             self.graph.setXRange(self.timeV-10,self.timeV)
-            #self.curve.setData([self.ptimeV,self.timeV],[self.pvalue,self.value])
             self.curve.setData(tdata,sensorData)
             
 #Define main() function

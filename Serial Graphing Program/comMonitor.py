@@ -44,9 +44,6 @@ class ComMonitorThread(threading.Thread):
         
         while self.alive.isSet():
             Line = self.serial_port.readline()
-            #qdataW = float(Line)
-            #qdataW = Line.decode("utf-8").rstrip('\r\n')
-            qdata = qdata+7
             #print("LINE: ")
             #print(Line)
             timeStamp = time.clock()
