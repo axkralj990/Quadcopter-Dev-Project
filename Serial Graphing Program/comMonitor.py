@@ -40,15 +40,13 @@ class ComMonitorThread(threading.Thread):
         
         #startTime = time.time()
         
-        qdata = 0
-        
         while self.alive.isSet():
             Line = self.serial_port.readline()
             #print("LINE: ")
             #print(Line)
             timeStamp = time.clock()
             self.data_q.put((Line,timeStamp))
-            time.sleep(0.01)
+            #time.sleep(0.01)
             
         if self.serial_port:
             self.serial_port.close()
