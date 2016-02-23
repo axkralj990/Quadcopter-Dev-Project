@@ -44,7 +44,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.createMainFrame()
         
         self.comPort = "COM4"
-        self.baudRate = "9600"
+        self.baudRate = "115200"
         self.timer = QtCore.QTimer()
         
         self.start_btn.clicked.connect(self.onStart)
@@ -164,7 +164,7 @@ class DataMonitor(QtGui.QMainWindow):
                 self.value3 = 0
             self.samples.append((self.timeV,self.value1,self.value2,self.value3))
             
-            if len(self.samples) > 350:
+            if len(self.samples) > 550:
                 self.samples.pop(0)
                 self.status_text.setText("Receiving data")
             

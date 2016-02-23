@@ -166,7 +166,7 @@ void setup() {
     // initialize serial communication
     // (115200 chosen because it is required for Teapot Demo output, but it's
     // really up to you depending on your project)
-    Serial.begin(9600);
+    Serial.begin(115200);
     while (!Serial); // wait for Leonardo enumeration, others continue immediately
 
     // NOTE: 8MHz or slower host processors, like the Teensy @ 3.3v or Ardunio
@@ -266,7 +266,7 @@ void loop() {
     if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
         // reset so we can continue cleanly
         mpu.resetFIFO();
-        //Serial.println(F("FIFO overflow!"));
+        Serial.println(F("FIFO overflow!"));
 
     // otherwise, check for DMP data ready interrupt (this should happen frequently)
     } else if (mpuIntStatus & 0x02) {
@@ -311,12 +311,11 @@ void loop() {
             mpu.dmpGetGravity(&gravity, &q);
             mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
             //Serial.print("ypr\t");
-            Serial.print(ypr[0] * 180/M_PI);
-            Serial.print(" ");
+            //Serial.print(ypr[0] * 180/M_PI);
+            //Serial.print("\t");
             Serial.print(ypr[1] * 180/M_PI);
             Serial.print(" ");
             Serial.println(ypr[2] * 180/M_PI);
-            delay(30);
         #endif
 
         #ifdef OUTPUT_READABLE_REALACCEL
