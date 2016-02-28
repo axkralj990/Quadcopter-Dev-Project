@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-import threading, serial, Queue, time
-from globals import LiveDataFeed, get_all_from_queue 
+import threading, serial, time 
 class ComMonitorThread(threading.Thread):
     def __init__(   self, 
                     data_q, 
@@ -24,12 +23,7 @@ class ComMonitorThread(threading.Thread):
         self.alive = threading.Event()
         self.alive.set()
         
-    def getData(self):
-        print("gd")
-        
     def run(self):
-        print("THREAD STARTED")
-        
         try:
             if self.serial_port:
                 self.serial_port.close()
@@ -42,11 +36,8 @@ class ComMonitorThread(threading.Thread):
         
         while self.alive.isSet():
             Line = self.serial_port.readline()
-            #print("LINE: ")
-            #print(Line)
             timeStamp = time.time()-startTime
             self.data_q.put((Line,timeStamp))
-            #time.sleep(0.01)
             
         if self.serial_port:
             self.serial_port.close()
@@ -54,6 +45,5 @@ class ComMonitorThread(threading.Thread):
     def join(self,timeout=None):
         self.alive.clear()
         self.serial_port.close()
-        print("========THREAD CLEARED========")
         threading.Thread.join(self,timeout)
         

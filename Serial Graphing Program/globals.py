@@ -23,17 +23,14 @@ class LiveDataFeed(object):
     def __init__(self):
         self.cur_data = None
         self.has_new_data = False
-        #print("LIVE DATA FEED CONSTRUCTED")
     
     def add_data(self, data):
         self.cur_data = data
         self.has_new_data = True
-        #print("DATA ADDED")
     
     def read_data(self):
         self.has_new_data = False
         return self.cur_data
-        #print("DATA READ")
         
 def get_all_from_queue(Q):
     """ Generator to yield one after the others all items 
