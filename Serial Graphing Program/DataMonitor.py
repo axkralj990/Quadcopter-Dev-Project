@@ -30,16 +30,16 @@ class DataMonitor(QtGui.QMainWindow):
         self.initUI()
         self.livefeed = LiveDataFeed()
         
-        self.ptimeV=0
-        self.pvalue=0
         self.timeV=0
-        self.value=0
+        self.value1=0
+        self.value2=0
+        self.value3=0
         self.samples = []        
         
     #define initUI method
     def initUI(self):
         #SET GEOMETRY=========================================================
-        self.resize(640,640)
+        self.resize(840,840)
         self.setWindowTitle("Arduino Serial Monitor")
         self.createMainFrame()
         
@@ -63,13 +63,19 @@ class DataMonitor(QtGui.QMainWindow):
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Plot")
         self.graph.setBackground('k')
-        self.curve = self.graph.plotItem.plot()
-        self.curve.setPen(color='g',width=2)
+        self.graph.plotItem.showGrid(1,1,1)
+        #pg.setConfigOptions(antialias=True)
+        self.curve1 = self.graph.plotItem.plot()
+        self.curve1.setPen(color='g',width=2)
+        self.curve2 = self.graph.plotItem.plot()
+        self.curve2.setPen(color='c',width=2)
+        self.curve3 = self.graph.plotItem.plot()
+        self.curve3.setPen(color='y',width=2)
         
         #STATUS BAR
         self.status_text = QtGui.QLabel("Monitor Idle")
         self.statusBar().addWidget(self.status_text,1)
-        self.status_text.setStyleSheet("QLabel {color: rgb(0,255,0)}")
+        self.status_text.setStyleSheet("QLabel {color: rgb(0,255,0); font-weight: bold;}")
         
         #INSERT WIDGETS INTO THE WINDOW
         grid.addWidget(self.start_btn,0,0,1,3)
@@ -123,12 +129,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.update_monitor()
         
     def read_serial_data(self):
-        #print("Reading Serial Data")
-        #print("SIZE_BEFORE: ")
-        #print(self.data_q.qsize())
         qdata = list(get_all_from_queue(self.data_q))
-        #print("SIZE_AFTER: ")
-        #print(self.data_q.qsize())
         
         if len(qdata) > 0:
             self.data = qdata
@@ -138,36 +139,56 @@ class DataMonitor(QtGui.QMainWindow):
     def update_monitor(self):
         #print("Monitor:")
         if self.livefeed.has_new_data:
-            self.ptimeV = self.timeV
-            self.pvalue = self.value
             self.data = self.livefeed.read_data()
-            '''
+            
             readings = self.data[0][0]
             readings = readings.split()
-            print("DATA: ")
-            try:
-                self.value=float(readings[0])
-            except ValueError:
-                print("NOT A FLOAT")
-            '''
-                
+            readings_count = len(readings)
+            
             try:
                 self.timeV = float(self.data[0][1])
-                self.value = float(self.data[0][0])
-                self.status_text.setText("Receiving Data")
+                if (readings_count==1):
+                    self.value1=float(readings[0])
+                elif (readings_count==2):
+                    self.value1=float(readings[0])
+                    self.value2=float(readings[1])
+                elif (readings_count==3):
+                    self.value1=float(readings[0])
+                    self.value2=float(readings[1])
+                    self.value3=float(readings[2])
+                self.status_text.setText("Receiving data")
             except ValueError:
                 self.status_text.setText("Waiting for the data")
                 self.timeV = 0
-                self.value = 0
-            self.samples.append((self.timeV,self.value))
-            if len(self.samples) > 1000:
-                self.samples.pop(0)
-                
-            tdata = [s[0] for s in self.samples]
-            sensorData = [s[1] for s in self.samples]
-            self.graph.setXRange(self.timeV-10,self.timeV)
-            self.curve.setData(tdata,sensorData)
+                self.value1 = 0
+                self.value2 = 0
+                self.value3 = 0
+            self.samples.append((self.timeV,self.value1,self.value2,self.value3))
             
+            if len(self.samples) > 550:
+                self.samples.pop(0)
+                self.status_text.setText("Receiving data")
+            
+            tdata = [s[0] for s in self.samples]
+            self.graph.setXRange(self.timeV-5,self.timeV)
+            if (readings_count==1):
+                sensorData1 = [s[1] for s in self.samples]
+                self.curve1.setData(tdata,sensorData1)
+            elif (readings_count==2):
+                sensorData1 = [s[1] for s in self.samples]
+                self.curve1.setData(tdata,sensorData1)
+                sensorData2 = [s[2] for s in self.samples]    
+                self.curve2.setData(tdata,sensorData2)
+            elif (readings_count==3):
+                sensorData1 = [s[1] for s in self.samples]
+                self.curve1.setData(tdata,sensorData1)
+                sensorData2 = [s[2] for s in self.samples]    
+                self.curve2.setData(tdata,sensorData2)
+                sensorData3 = [s[3] for s in self.samples]
+                self.curve3.setData(tdata,sensorData3)
+                    
+                    
+                
 #Define main() function
 def main():
     #start QT application
