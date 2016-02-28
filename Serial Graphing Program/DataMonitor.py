@@ -83,7 +83,7 @@ class DataMonitor(QtGui.QMainWindow):
         #STATUS BAR
         self.status_text = QtGui.QLabel("Monitor Idle")
         self.statusBar().addWidget(self.status_text,1)
-        self.status_text.setStyleSheet("QLabel {color: rgb(0,255,0); font-weight: bold;}")
+        self.status_text.setStyleSheet("QLabel {color: rgb(200,200,200); font-weight: bold;}")
         
         #INSERT WIDGETS INTO THE MAIN FRAME
         grid.addWidget(self.start_btn,0,0,1,3)
@@ -92,6 +92,9 @@ class DataMonitor(QtGui.QMainWindow):
         self.mainFrame = QtGui.QWidget()
         self.mainFrame.setLayout(grid)
         self.setCentralWidget(self.mainFrame)
+        
+        #ADD MENU
+        self.createToolbar()
         
         #STYLESHEET
         self.start_btn.setStyleSheet("QPushButton {background-color: rgb(170,170,180);"
@@ -108,9 +111,31 @@ class DataMonitor(QtGui.QMainWindow):
                                     "font-size:20px;}")
         self.setStyleSheet("QMainWindow {background-color: rgb(60,60,70)}")
         self.setWindowIcon(QtGui.QIcon('SP_logo.png'))
+            
+    def createToolbar(self):
+        self.changeComPort = QtGui.QAction(QtGui.QIcon('COMPORT.png'), 'Config Serial', self)
+        self.changeComPort.triggered.connect(self.showPortDialog)
         
+        self.changeBaud = QtGui.QAction(QtGui.QIcon('BAUDRATE.png'), 'Set Baud Rate', self)
+        self.changeBaud.triggered.connect(self.showBaudDialog)
+        
+        self.toolbar = self.addToolBar('Config Serial')
+        self.toolbar.addAction(self.changeComPort)
+        self.toolbar.addAction(self.changeBaud)
+        self.toolbar.addSeparator()
+        self.toolbar.setIconSize(QtCore.QSize(50,50))
+        
+    def showPortDialog(self):
+        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Enter COM port:')
+        if ok:
+            self.comPort = str(text)   
+            
+    def showBaudDialog(self):
+        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Enter baud rate:')
+        if ok:
+            self.baudRate = str(text)
+    
     def onStart(self):
-        print("starting")
         self.start_btn.setEnabled(False)
         self.stop_btn.setEnabled(True)
         
@@ -192,9 +217,7 @@ class DataMonitor(QtGui.QMainWindow):
                 self.curve2.setData(tdata,sensorData2)
                 sensorData3 = [s[3] for s in self.samples]
                 self.curve3.setData(tdata,sensorData3)
-                    
-                    
-                
+        
 #define main() function
 def main():
     #start the QT application
