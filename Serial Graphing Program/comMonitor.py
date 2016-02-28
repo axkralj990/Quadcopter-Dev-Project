@@ -38,13 +38,13 @@ class ComMonitorThread(threading.Thread):
             print(e.message)
             return
         
-        #startTime = time.time()
+        startTime = time.time()
         
         while self.alive.isSet():
             Line = self.serial_port.readline()
             #print("LINE: ")
             #print(Line)
-            timeStamp = time.clock()
+            timeStamp = time.time()-startTime
             self.data_q.put((Line,timeStamp))
             #time.sleep(0.01)
             

@@ -44,7 +44,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.createMainFrame()
         
         self.comPort = "COM4"
-        self.baudRate = "115200"
+        self.baudRate = "9600"
         self.timer = QtCore.QTimer()
         
         self.start_btn.clicked.connect(self.onStart)
@@ -63,6 +63,7 @@ class DataMonitor(QtGui.QMainWindow):
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Plot")
         self.graph.setBackground('k')
+        self.graph.plotItem.showGrid(1,1,1)
         #pg.setConfigOptions(antialias=True)
         self.curve1 = self.graph.plotItem.plot()
         self.curve1.setPen(color='g',width=2)
