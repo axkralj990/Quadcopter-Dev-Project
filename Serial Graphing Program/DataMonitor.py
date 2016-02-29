@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 '''
 Arduino serial plotting program - USER INTERFACE
 By: Aleksij Kraljic
@@ -113,7 +112,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.setWindowIcon(QtGui.QIcon('SP_logo.png'))
             
     def createToolbar(self):
-        self.changeComPort = QtGui.QAction(QtGui.QIcon('COMPORT.png'), 'Config Serial', self)
+        self.changeComPort = QtGui.QAction(QtGui.QIcon('COMPORT.png'), 'Set Com Port', self)
         self.changeComPort.triggered.connect(self.showPortDialog)
         
         self.changeBaud = QtGui.QAction(QtGui.QIcon('BAUDRATE.png'), 'Set Baud Rate', self)
@@ -126,12 +125,12 @@ class DataMonitor(QtGui.QMainWindow):
         self.toolbar.setIconSize(QtCore.QSize(50,50))
         
     def showPortDialog(self):
-        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Enter COM port:')
+        text, ok = QtGui.QInputDialog.getText(self, 'Set COM Port', 'Enter COM port:')
         if ok:
-            self.comPort = str(text)   
+            self.comPort = str(text) 
             
     def showBaudDialog(self):
-        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Enter baud rate:')
+        text, ok = QtGui.QInputDialog.getText(self, 'Set Baud Rate', 'Enter baud rate:')
         if ok:
             self.baudRate = str(text)
     
@@ -217,7 +216,37 @@ class DataMonitor(QtGui.QMainWindow):
                 self.curve2.setData(tdata,sensorData2)
                 sensorData3 = [s[3] for s in self.samples]
                 self.curve3.setData(tdata,sensorData3)
+    '''
+    def showDialog(self):
+        CPR = QtGui.QDialog(self)
+        CPR.setWindowTitle('Com Port Setting')
         
+        CPR.resize(150,80)
+        
+        gridCP = QtGui.QGridLayout(CPR)
+        okBtn = QtGui.QPushButton('OK')
+        CP_label = QtGui.QLabel(CPR)
+        CP_label.setText('Enter COM port:')
+        CP_le = QtGui.QLineEdit(CPR)
+        
+        gridCP.addWidget(okBtn,2,0,1,2)
+        gridCP.addWidget(CP_label,0,0,1,1)
+        gridCP.addWidget(CP_le,1,0,1,2)
+        
+        #STYLESHEETS =========================================================
+        CPR.setStyleSheet("QDialog {background-color: rgb(60,60,70)}")
+        CP_label.setStyleSheet("QLabel {color: rgb(200,200,200);"
+                                    "font-size: 20px;}")
+        okBtn.setStyleSheet("QPushButton {background-color: rgb(170,170,180);"
+                                    "border-radius: 4px;"
+                                    "border-style: solid;"
+                                    "border-color: black;"
+                                    "border-width: 1px;"
+                                    "font-size:20px;}")
+        # ====================================================================
+        CPR.exec_()
+    '''
+
 #define main() function
 def main():
     #start the QT application
