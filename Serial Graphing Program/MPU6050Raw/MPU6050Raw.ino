@@ -1,5 +1,6 @@
 #include "I2Cdev.h"
 #include "MPU6050.h"
+#include <math.h>
 
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
     #include "Wire.h"
@@ -14,6 +15,8 @@ int16_t gx, gy, gz;
 int16_t readings[6];
 int sampleSize = 100;
 int axOS=0,ayOS=0,azOS=0,gxOS=0,gyOS=0,gzOS=0;
+float theta_ACC = 0, phi_ACC = 0, theta_G = 0, phi_G = 0, theta_CF = 0, phi_CF = 0;
+float dt = 0, pdt = 0;
 
 void MPU6050GetOffsets(int &axOS,int &ayOS,int &azOS,int &gxOS,int &gyOS,int &gzOS);
 int DataAverage(int dt[]);
@@ -36,25 +39,33 @@ void setup() {
     delay(500);
     MPU6050GetOffsets(axOS,ayOS,azOS,gxOS,gyOS,gzOS);
     delay(500);
+    pdt = millis();
 }
 
 void loop() {
-
+    
     // read raw accel/gyro measurements from device
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+
+    dt = millis()-pdt;
+
+    theta_G += -1*gy/16.4f*dt/1000;
+    phi_G += gx/16.4f*dt/1000;
+    
+    theta_ACC = atan2(ax,sqrt(pow(ay,2)+pow(az,2)))*180/3.14;
+    phi_ACC = -1*atan2(ay,sqrt(pow(ax,2)+pow(az,2)))*180/3.14;
+
+    theta_CF = 0.98*theta_G+0.2*theta_ACC;
+    phi_CF = 0.98*phi_G+0.2*phi_ACC;
     
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
-        Serial.print((ax-axOS)/ACCELSENS); Serial.print(" ");
-        Serial.print((ay-ayOS)/ACCELSENS); Serial.print(" ");
-        Serial.println((az)/ACCELSENS);
-        //delay(8);
-        // gyro offsets gx:+836 gy:+221 gz:-434
-        //Serial.print(gx);
-        //Serial.print(gy);
-        //Serial.println(gz);
+        Serial.print(theta_CF); Serial.print(" ");
+        Serial.println(phi_CF); //Serial.print(" ");
+        //Serial.println(dt);
     #endif
     
+    pdt = millis();
 }
 
 void MPU6050GetOffsets(int &axOS,int &ayOS,int &azOS,int &gxOS,int &gyOS,int &gzOS) {
@@ -90,3 +101,4 @@ int DataAverage(int dt[]) {
   data_average = data_sum/sampleSize;
   return data_average;
 }
+
