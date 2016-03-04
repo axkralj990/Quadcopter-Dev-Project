@@ -15,15 +15,15 @@ In order to run the code you need to install the following libraries:
 Currentlly I am working on the branch Refining-the-code-1, where I added a toolbar from which the COM port and baudrate can be changed. Since I added the toolbar I'm experiencing some trouble while running the program with Spyder 2.3 where the kernel crashes from time to time. I will merge the branch with the master once I fix that problem. If you decide to use the program from the master branch, you need to set the COM port and baudrate manually inside DataMonitor.py code.
 
 To run the program place the following files in the same folder:
-Source:
--DataMonitor.py
--globals.py
--ComMonitor.py
 
-Icons:
--SP_logo.png
--COMPORT.png (refining-the-code-1 branch)
--BAUDRATE.png (refining-the-code-1 branch)
+<ul>
+  <li>DataMonitor.py</li>
+  <li>globals.py</li>
+  <li>ComMonitor.py</li>
+  <li>SP_logo.png</li>
+  <li>COMPORT.png (refining-the-code-1 branch)</li>
+  <li>BAUDRATE.png (refining-the-code-1 branch)</li>
+</ul>
 
 To start the program run DataMonitor.py
 
