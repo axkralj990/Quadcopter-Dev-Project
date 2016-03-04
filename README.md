@@ -25,9 +25,9 @@ To run the program place the following files in the same folder:
   <li>BAUDRATE.png (refining-the-code-1 branch)</li>
 </ul>
 
-To start the program run DataMonitor.py
+To start the program run DataMonitor.py.
 
-There is still a lot to fix, add, improve, etc., so any suggestions and corrections are welcome!
+There is still a lot to fix, add, and improve, so any suggestions and corrections are welcome!
 
 Author: alex.kraljic@gmail.com
 
