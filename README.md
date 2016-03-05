@@ -1,4 +1,4 @@
-# Quadcopter-Development-Project
+# Quadcopter Project
 Hello!
 
 I am working on this project in order to familiarize myself with all the programming skills required to build an Arduino-controlled
