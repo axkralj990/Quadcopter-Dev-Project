@@ -6,7 +6,9 @@ quadcopter. I am starting with the very basics, so I can understand everything I
 
 <b>Serial Graphing Monitor</b> is used to visualize the data sent via serial communication. I use it to analize the data sent from the MPU6050 IMU connected to Arduino. Current code is written for Python 2.7. If you want to run it on Python 3 you need to change a couple of things (For example: -Py 2: from Queue import Queue -Py 3: from queue import queue).
 
-<img src="Monitor.jpg" height="200">
+<div align="center">
+<img src="Monitor.jpg" height="500">
+</div>
 
 In order to run the code you need to install the following libraries:
 <ul>
