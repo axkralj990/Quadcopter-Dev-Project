@@ -1,37 +1,27 @@
-// I2Cdev and MPU6050 must be installed as libraries, or else the .cpp/.h files
-// for both classes must be in the include path of your project
 #include "I2Cdev.h"
 #include "MPU6050.h"
+#include <math.h>
 
-// Arduino Wire library is required if I2Cdev I2CDEV_ARDUINO_WIRE implementation
-// is used in I2Cdev.h
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
     #include "Wire.h"
 #endif
 
-// class default I2C address is 0x68
-// specific I2C addresses may be passed as a parameter here
-// AD0 low = 0x68 (default for InvenSense evaluation board)
-// AD0 high = 0x69
+#define ACCELSENS 16384.0f // LSB/mg
+
 MPU6050 accelgyro;
-//MPU6050 accelgyro(0x69); // <-- use for AD0 high
 
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
+int16_t readings[6];
+int sampleSize = 100;
+int16_t axOS=0,ayOS=0,azOS=0,gxOS=0,gyOS=0,gzOS=0;
+float theta_ACC = 0, phi_ACC = 0, theta_G = 0, phi_G = 0, theta_CF = 0, phi_CF = 0;
+float dt = 0, pdt = 0, theta_F_G = 0, phi_F_G = 0;
 
-// uncomment "OUTPUT_READABLE_ACCELGYRO" if you want to see a tab-separated
-// list of the accel X/Y/Z and then gyro X/Y/Z values in decimal. Easy to read,
-// not so easy to parse, and slow(er) over UART.
+void MPU6050GetOffsets(int &axOS,int &ayOS,int &azOS,int &gxOS,int &gyOS,int &gzOS);
+int DataAverage(int dt[]);
+
 #define OUTPUT_READABLE_ACCELGYRO
-
-// uncomment "OUTPUT_BINARY_ACCELGYRO" to send all 6 axes of data as 16-bit
-// binary, one right after the other. This is very fast (as fast as possible
-// without compression or data loss), and easy to parse, but impossible to read
-// for a human.
-//#define OUTPUT_BINARY_ACCELGYRO
-
-#define LED_PIN 13
-bool blinkState = false;
 
 void setup() {
     // join I2C bus (I2Cdev library doesn't do this automatically)
@@ -41,39 +31,82 @@ void setup() {
         Fastwire::setup(400, true);
     #endif
 
-    // initialize serial communication
-    // (38400 chosen because it works as well at 8MHz as it does at 16MHz, but
-    // it's really up to you depending on your project)
     Serial.begin(9600);
 
     // initialize device
     accelgyro.initialize();
-    
-    // configure Arduino LED for
-    pinMode(LED_PIN, OUTPUT);
+    //Gyro initialized to 250 || Accelerometer initialized to 2
+    delay(500);
+    MPU6050GetOffsets(axOS,ayOS,azOS,gxOS,gyOS,gzOS);
+    delay(500);
+    pdt = millis();
 }
 
 void loop() {
+    
     // read raw accel/gyro measurements from device
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    gx = gx-gxOS;
+    gy = gy-gyOS;
+    ax = ax-axOS;
+    ay = ay-ayOS;
+    //az = az-azOS;
+    
+    dt = millis()-pdt;
+    
+    theta_G += -1*gy/16.4f*dt/1000;
+    phi_G += gx/16.4f*dt/1000;
 
-    // these methods (and a few others) are also available
-    //accelgyro.getAcceleration(&ax, &ay, &az);
-    //accelgyro.getRotation(&gx, &gy, &gz);
+    theta_F_G = -1*gy/16.4f*dt/1000 + theta_CF;
+    phi_F_G = -1*gx/16.4f*dt/1000 + phi_CF;
+    
+    theta_ACC = atan2(ax,sqrt(pow(ay,2)+pow(az,2)))*180/3.14;
+    phi_ACC = -1*atan2(ay,sqrt(pow(ax,2)+pow(az,2)))*180/3.14;
 
+    theta_CF = 0.96*theta_F_G+0.04*theta_ACC;
+    phi_CF = 0.96*phi_F_G+0.04*phi_ACC;
+    
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
-        Serial.print(ax-160); Serial.print(" ");
-        Serial.print(ay+20); Serial.print(" ");
-        Serial.println(az-20250);
-        //delay(8);
-        // gyro offsets gx:+836 gy:+221 gz:-434
-        //Serial.print(gx);
-        //Serial.print(gy);
-        //Serial.println(gz);
+        Serial.print(theta_CF); Serial.print(" ");
+        Serial.println(phi_CF); //Serial.print(" ");
+        //Serial.println(dt);
     #endif
-
-    // blink LED to indicate activity
-    blinkState = !blinkState;
-    digitalWrite(LED_PIN, blinkState);
+    
+    pdt = millis();
 }
+
+void MPU6050GetOffsets(int &axOS,int &ayOS,int &azOS,int &gxOS,int &gyOS,int &gzOS) {
+   int MPU_offsets[6]={0,0,0,0,0,0};
+   int offset_buffer[6][sampleSize];
+   for (int k=0;k<6;k++) {
+     for (int i=0;i<sampleSize;i++){
+      //accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+      accelgyro.getMotion6(&readings[0],&readings[1],
+                           &readings[2],&readings[3],
+                           &readings[4],&readings[5]);
+                           
+      offset_buffer[k][i] = readings[k];
+      //Serial.println(offset_buffer[k][i]);
+     }
+     MPU_offsets[k] = DataAverage(offset_buffer[k]);
+   }
+   axOS = MPU_offsets[0];
+   ayOS = MPU_offsets[1];
+   azOS = MPU_offsets[2];
+   gxOS = MPU_offsets[3];
+   gyOS = MPU_offsets[4];
+   gzOS = MPU_offsets[5];
+   return;
+}
+
+int DataAverage(int dt[]) {
+  float data_sum = 0;
+  int data_average = 0;
+  for (int i=0;i<sampleSize;i++){
+    data_sum += dt[i];
+  }
+  data_average = data_sum/sampleSize;
+  return data_average;
+}
+
