@@ -118,11 +118,14 @@ class DataMonitor(QtGui.QMainWindow):
         self.changeBaud = QtGui.QAction(QtGui.QIcon('BAUDRATE.png'), 'Set Baud Rate', self)
         self.changeBaud.triggered.connect(self.showBaudDialog)
         
-        self.toolbar = self.addToolBar('Config Serial')
-        self.toolbar.addAction(self.changeComPort)
-        self.toolbar.addAction(self.changeBaud)
-        self.toolbar.addSeparator()
-        self.toolbar.setIconSize(QtCore.QSize(50,50))
+        toolbar = self.addToolBar('Config')
+        
+        toolbar.addAction(self.changeComPort)
+        
+        toolbar.addAction(self.changeBaud)
+        
+        toolbar.addSeparator()
+        toolbar.setIconSize(QtCore.QSize(50,50))
         
     def showPortDialog(self):
         text, ok = QtGui.QInputDialog.getText(self, 'Set COM Port', 'Enter COM port:')

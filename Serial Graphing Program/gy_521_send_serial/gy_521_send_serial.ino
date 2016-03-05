@@ -932,7 +932,7 @@ void loop()
   // Update the saved data with the latest values
   set_last_read_angle_data(t_now, angle_x, angle_y, angle_z, unfiltered_gyro_angle_x, unfiltered_gyro_angle_y, unfiltered_gyro_angle_z);
   
-  // Send the data to the serial port
+  /* Send the data to the serial port
   Serial.print(F("DEL:"));              //Delta T
   Serial.print(dt, DEC);
   Serial.print(F("#ACC:"));              //Accelerometer angle
@@ -954,7 +954,10 @@ void loop()
   Serial.print(F(","));
   Serial.print(angle_z, 2);
   Serial.println(F(""));
-  
+  */
+  Serial.print(accel_angle_x, 2); Serial.print(" ");
+  Serial.print(unfiltered_gyro_angle_x, 2); Serial.print(" ");
+  Serial.println(angle_x, 2);
   // Delay so we don't swamp the serial port
   delay(5);
 }
