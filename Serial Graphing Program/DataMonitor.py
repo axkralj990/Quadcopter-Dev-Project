@@ -36,7 +36,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.value2=0
         self.value3=0
         self.samples = []  
-        self.maxSamples = 550;
+        self.maxSamples = 550 #here was a ;
         
     #define initUI method
     def initUI(self):
@@ -52,9 +52,9 @@ class DataMonitor(QtGui.QMainWindow):
         self.timer = QtCore.QTimer()
         
         #signals and slots for pushbuttons
-        self.start_btn.clicked.connect(self.onStart)
-        self.stop_btn.clicked.connect(self.onStop)
-        self.stop_btn.setEnabled(False)
+        #self.start_btn.clicked.connect(self.onStart)
+        #self.stop_btn.clicked.connect(self.onStop)
+        #self.stop_btn.setEnabled(False)
         
     def createMainFrame(self):
         #createMainFrame creates the user interface layout
@@ -65,8 +65,8 @@ class DataMonitor(QtGui.QMainWindow):
         self.setLayout(grid)
         
         #START/STOP BUTTON
-        self.start_btn = QtGui.QPushButton("Start")
-        self.stop_btn = QtGui.QPushButton("Stop")
+        #self.start_btn = QtGui.QPushButton("Start")
+        #self.stop_btn = QtGui.QPushButton("Stop")
         
         #GRAPH
         self.graph = pg.PlotWidget(title="Serial Data Plot")
@@ -85,8 +85,8 @@ class DataMonitor(QtGui.QMainWindow):
         self.status_text.setStyleSheet("QLabel {color: rgb(200,200,200); font-weight: bold;}")
         
         #INSERT WIDGETS INTO THE MAIN FRAME
-        grid.addWidget(self.start_btn,0,0,1,3)
-        grid.addWidget(self.stop_btn,1,0,1,3)
+        #grid.addWidget(self.start_btn,0,0,1,3)
+        #grid.addWidget(self.stop_btn,1,0,1,3)
         grid.addWidget(self.graph,2,0,1,3) 
         self.mainFrame = QtGui.QWidget()
         self.mainFrame.setLayout(grid)
@@ -96,6 +96,7 @@ class DataMonitor(QtGui.QMainWindow):
         self.createToolbar()
         
         #STYLESHEET
+        '''
         self.start_btn.setStyleSheet("QPushButton {background-color: rgb(170,170,180);"
                                     "border-radius: 4px;"
                                     "border-style: solid;"
@@ -108,24 +109,38 @@ class DataMonitor(QtGui.QMainWindow):
                                     "border-color: black;"
                                     "border-width: 1px;"
                                     "font-size:20px;}")
+        '''
         self.setStyleSheet("QMainWindow {background-color: rgb(60,60,70)}")
         self.setWindowIcon(QtGui.QIcon('SP_logo.png'))
             
     def createToolbar(self):
+        #Create the toolbar first!
+        toolbar = self.addToolBar('Config')
+        
+        self.startFeed = QtGui.QAction(QtGui.QIcon('START.png'), 'Start', self)
+        self.startFeed.triggered.connect(self.onStart)
+        
+        self.stopFeed = QtGui.QAction(QtGui.QIcon('STOP.png'), 'Stop', self)
+        self.stopFeed.triggered.connect(self.onStop)
+        
         self.changeComPort = QtGui.QAction(QtGui.QIcon('COMPORT.png'), 'Set Com Port', self)
         self.changeComPort.triggered.connect(self.showPortDialog)
         
         self.changeBaud = QtGui.QAction(QtGui.QIcon('BAUDRATE.png'), 'Set Baud Rate', self)
         self.changeBaud.triggered.connect(self.showBaudDialog)
         
-        toolbar = self.addToolBar('Config')
-        
-        toolbar.addAction(self.changeComPort)
-        
-        toolbar.addAction(self.changeBaud)
-        
+        toolbar.addAction(self.startFeed)
+        toolbar.addAction(self.stopFeed)
         toolbar.addSeparator()
+        toolbar.addAction(self.changeComPort)
+        toolbar.addAction(self.changeBaud)
+        toolbar.addSeparator()
+        
         toolbar.setIconSize(QtCore.QSize(50,50))
+        toolbar.setStyleSheet("QToolBar {background-color: rgb(60,60,70);}")
+        toolbar.setMovable(False)
+        
+        self.stopFeed.setEnabled(False)
         
     def showPortDialog(self):
         text, ok = QtGui.QInputDialog.getText(self, 'Set COM Port', 'Enter COM port:')
@@ -138,8 +153,13 @@ class DataMonitor(QtGui.QMainWindow):
             self.baudRate = str(text)
     
     def onStart(self):
-        self.start_btn.setEnabled(False)
-        self.stop_btn.setEnabled(True)
+        self.startFeed.setEnabled(False)
+        self.stopFeed.setEnabled(True)
+        
+        #self.start_btn.setEnabled(False)
+        #self.stop_btn.setEnabled(True)
+        
+        self.isReceiving = True        
         
         self.data_q = Queue.Queue()
         
@@ -150,9 +170,14 @@ class DataMonitor(QtGui.QMainWindow):
         self.timer.start(10)
         
     def onStop(self):
+        self.startFeed.setEnabled(True)
+        self.stopFeed.setEnabled(False)
+        
         self.status_text.setText("Monitor idle")
-        self.start_btn.setEnabled(True)
-        self.stop_btn.setEnabled(False)
+        #self.start_btn.setEnabled(True)
+        #self.stop_btn.setEnabled(False)
+        
+        self.isReceiving = False
         
         self.timer.stop()
         self.com_monitor.join(0.01)
