@@ -18,9 +18,7 @@ In order to run the code you need to install the following libraries:
   <li>PySerial</li>
 </ul>
 
-My last addition was the toolbar. Since I added it I'm experiencing some trouble while running the program with Spyder 2.3 where the kernel crashes from time to time.
-
-To run the program place the following files in a folder:
+Place the following files in a folder:
 
 <ul>
   <li>DataMonitor.py</li>
@@ -32,6 +30,8 @@ To run the program place the following files in a folder:
 </ul>
 
 To start the program run DataMonitor.py.
+
+The program is written to receive maximum three separate values at a time from serial. For now it is programed so all three values need to be packed in a single line, for example, if you want to plot readings from all X, Y, and Z accelerometer axis you should write them to serial like this "AccX AccY AccZ\n". If only one or two values are written to serial, then only one or two data sets will be plotted.
 
 There is still a lot to fix, add, and improve, so any suggestions and corrections are welcome!
 
