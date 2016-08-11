@@ -136,7 +136,7 @@ class DataMonitor(QtGui.QMainWindow):
         toolbar.addAction(self.changeBaud)
         toolbar.addSeparator()
         
-        toolbar.setIconSize(QtCore.QSize(50,50))
+        toolbar.setIconSize(QtCore.QSize(70,70))
         toolbar.setStyleSheet("QToolBar {background-color: rgb(60,60,70);}")
         toolbar.setMovable(False)
         
