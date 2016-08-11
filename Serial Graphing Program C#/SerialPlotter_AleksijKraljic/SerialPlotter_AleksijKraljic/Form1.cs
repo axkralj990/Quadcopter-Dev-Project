@@ -310,7 +310,14 @@ namespace SerialPlotter_AleksijKraljic
 
                 for (int i=0;i<M1.Count;i++)
                 {
-                    write_D.Add(Convert.ToString(time_M[i]) + "," + Convert.ToString(M1[i]) + "," + Convert.ToString(M2[i]) + "," + Convert.ToString(M3[i]) + "," + Convert.ToString(M4[i]));
+                    try
+                    {
+                        write_D.Add(Convert.ToString(time_M[i]) + "," + Convert.ToString(M1[i]) + "," + Convert.ToString(M2[i]) + "," + Convert.ToString(M3[i]) + "," + Convert.ToString(M4[i]));
+                    }
+                    catch
+                    {
+                        write_D.Add("outOfRange");
+                    }
                 }
 
                 foreach (string line in write_D)
