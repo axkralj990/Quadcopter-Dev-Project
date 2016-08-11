@@ -28,6 +28,9 @@ namespace SerialPlotter_AleksijKraljic
         // Min and Max values for Y-Axis
         double Y_max = 5;
         double Y_min = 0;
+        // String for storing received data
+        string[] measurements;
+        string fileName = "measured_data.txt";
 
         // List for data storage to write to a file
         List<double> M1 = new List<double>();
@@ -67,6 +70,8 @@ namespace SerialPlotter_AleksijKraljic
             string[] bauds = { "300", "1200", "2400", "4800", "9600", "19200", "38400", "57600", "74880", "115200", "230400", "250000"};
             baudBox.DataSource = bauds;
             baudBox.SelectedIndex = 4;
+
+            fileNameBox.Text = fileName;
 
             // initial form object states
             checkCh1.Enabled = false;
@@ -150,41 +155,41 @@ namespace SerialPlotter_AleksijKraljic
 
             if (RxStringComplete == true)
             {
+                splitReceivedString();
                 this.Invoke(new EventHandler(displayText));
                 this.Invoke(new EventHandler(toBuffer));
                 
                 try
                 {
-                    string[] measurments = RxString.Split('_');
                     time_M.Add(time_ms);
  
-                    if (measurments.Length == 1)
+                    if (measurements.Length == 1)
                     {
-                        M1.Add(Convert.ToDouble(measurments[0]));
+                        M1.Add(Convert.ToDouble(measurements[0]));
                         M2.Add(0);
                         M3.Add(0);
                         M4.Add(0);
                     }
-                    else if (measurments.Length == 2)
+                    else if (measurements.Length == 2)
                     {
-                        M1.Add(Convert.ToDouble(measurments[0]));
-                        M2.Add(Convert.ToDouble(measurments[1]));
+                        M1.Add(Convert.ToDouble(measurements[0]));
+                        M2.Add(Convert.ToDouble(measurements[1]));
                         M3.Add(0);
                         M4.Add(0);
                     }
-                    else if (measurments.Length == 3)
+                    else if (measurements.Length == 3)
                     {
-                        M1.Add(Convert.ToDouble(measurments[0]));
-                        M2.Add(Convert.ToDouble(measurments[1]));
-                        M3.Add(Convert.ToDouble(measurments[2]));
+                        M1.Add(Convert.ToDouble(measurements[0]));
+                        M2.Add(Convert.ToDouble(measurements[1]));
+                        M3.Add(Convert.ToDouble(measurements[2]));
                         M4.Add(0);
                     }
-                    else if (measurments.Length == 4)
+                    else if (measurements.Length == 4)
                     {
-                        M1.Add(Convert.ToDouble(measurments[0]));
-                        M2.Add(Convert.ToDouble(measurments[1]));
-                        M3.Add(Convert.ToDouble(measurments[2]));
-                        M4.Add(Convert.ToDouble(measurments[3]));
+                        M1.Add(Convert.ToDouble(measurements[0]));
+                        M2.Add(Convert.ToDouble(measurements[1]));
+                        M3.Add(Convert.ToDouble(measurements[2]));
+                        M4.Add(Convert.ToDouble(measurements[3]));
                     }
                 }
                 catch { }
@@ -229,33 +234,33 @@ namespace SerialPlotter_AleksijKraljic
         private void displayText(object sender, EventArgs e)
         {
             // method that displays text in textboxes
-            string[] voltages = RxString.Split('_');
-            if (voltages.Length < 1)
+            //string[] measurements = RxString.Split('_');
+            if (measurements.Length < 1)
             {
                 checkCh1.Enabled = false;
             }
-            else if (voltages.Length == 1)
+            else if (measurements.Length == 1)
             {
                 checkCh1.Enabled = true;
                 checkCh2.Enabled = false;
                 checkCh3.Enabled = false;
                 checkCh4.Enabled = false;
             }
-            else if (voltages.Length == 2)
+            else if (measurements.Length == 2)
             {
                 checkCh1.Enabled = true;
                 checkCh2.Enabled = true;
                 checkCh3.Enabled = false;
                 checkCh4.Enabled = false;
             }
-            else if (voltages.Length == 3)
+            else if (measurements.Length == 3)
             {
                 checkCh1.Enabled = true;
                 checkCh2.Enabled = true;
                 checkCh3.Enabled = true;
                 checkCh4.Enabled = false;
             }
-            else if (voltages.Length == 4)
+            else if (measurements.Length == 4)
             {
                 checkCh1.Enabled = true;
                 checkCh2.Enabled = true;
@@ -265,10 +270,10 @@ namespace SerialPlotter_AleksijKraljic
 
             try
             {
-                textBox1.Text = voltages[0];
-                textBox2.Text = voltages[1];
-                textBox3.Text = voltages[2];
-                textBox4.Text = voltages[3];
+                textBox1.Text = measurements[0];
+                textBox2.Text = measurements[1];
+                textBox3.Text = measurements[2];
+                textBox4.Text = measurements[3];
             }
             catch { }
         }
@@ -286,22 +291,22 @@ namespace SerialPlotter_AleksijKraljic
             s_watch.Stop();
             s_watch.Reset();
 
-            save_measurments();
+            save_measurements();
         }
 
-        private void save_measurments()
+        private void save_measurements()
         {
             // method used to store recorded data to file
             string folder_path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            string fileName = "measured_data.txt";
+            
             //string fileName = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
 
-            string path = folder_path + "\\" + fileName;
+            string path = folder_path + "\\" + fileNameBox.Text;
 
             using (StreamWriter sw = File.CreateText(path))
             {
-                sw.WriteLine("=====Measurments=====");
-                sw.WriteLine("| t | ch1 | ch2 | ch3 | ch4 |");
+                sw.WriteLine("=====measurements=====");
+                sw.WriteLine("|t|ch1|ch2|ch3|ch4|");
 
                 for (int i=0;i<M1.Count;i++)
                 {
@@ -382,17 +387,17 @@ namespace SerialPlotter_AleksijKraljic
         private void toBuffer(object sender, EventArgs e)
         {
             // method to store received values to a circular buffer that is being drawn on the graph
-            string[] voltages = RxString.Split('_');
+            //string[] measurements = RxString.Split('_');
             time_ms = Convert.ToDouble(s_watch.ElapsedMilliseconds);
             try
             {
-                if (checkCh1.Checked) { sensor1.Add(time_ms / 1000, Convert.ToDouble(voltages[0])); }
+                if (checkCh1.Checked) { sensor1.Add(time_ms / 1000, Convert.ToDouble(measurements[0])); }
                 else { sensor1.Clear(); }
-                if (checkCh2.Checked && voltages.Length >= 2) { sensor2.Add(time_ms / 1000, Convert.ToDouble(voltages[1])); }
+                if (checkCh2.Checked && measurements.Length >= 2) { sensor2.Add(time_ms / 1000, Convert.ToDouble(measurements[1])); }
                 else { sensor2.Clear(); }
-                if (checkCh3.Checked && voltages.Length >= 3) { sensor3.Add(time_ms / 1000, Convert.ToDouble(voltages[2])); }
+                if (checkCh3.Checked && measurements.Length >= 3) { sensor3.Add(time_ms / 1000, Convert.ToDouble(measurements[2])); }
                 else { sensor3.Clear(); }
-                if (checkCh4.Checked && voltages.Length >= 4) { sensor4.Add(time_ms / 1000, Convert.ToDouble(voltages[3])); }
+                if (checkCh4.Checked && measurements.Length >= 4) { sensor4.Add(time_ms / 1000, Convert.ToDouble(measurements[3])); }
                 else { sensor4.Clear(); }
             }
             catch { }
@@ -456,6 +461,11 @@ namespace SerialPlotter_AleksijKraljic
         {
             AboutBox1 aboutWindow = new AboutBox1();
             aboutWindow.Show();
+        }
+
+        private void splitReceivedString()
+        {
+            measurements = RxString.Split('_');
         }
     }
 }

@@ -66,6 +66,8 @@
             this.checkAutoY = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configDirectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
+            this.fileNameBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -244,7 +246,7 @@
             // 
             // zedGraphControl1
             // 
-            this.zedGraphControl1.Location = new System.Drawing.Point(11, 217);
+            this.zedGraphControl1.Location = new System.Drawing.Point(11, 260);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0D;
             this.zedGraphControl1.ScrollMaxX = 0D;
@@ -496,11 +498,29 @@
             this.configDirectionsToolStripMenuItem.Text = "Config Directions";
             this.configDirectionsToolStripMenuItem.Click += new System.EventHandler(this.configDirectionsToolStripMenuItem_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 218);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Output File Name";
+            // 
+            // fileNameBox
+            // 
+            this.fileNameBox.Location = new System.Drawing.Point(13, 234);
+            this.fileNameBox.Name = "fileNameBox";
+            this.fileNameBox.Size = new System.Drawing.Size(123, 20);
+            this.fileNameBox.TabIndex = 37;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 550);
+            this.ClientSize = new System.Drawing.Size(529, 597);
+            this.Controls.Add(this.fileNameBox);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -574,6 +594,8 @@
         private System.Windows.Forms.CheckBox checkAutoY;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem configDirectionsToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox fileNameBox;
     }
 }
 
