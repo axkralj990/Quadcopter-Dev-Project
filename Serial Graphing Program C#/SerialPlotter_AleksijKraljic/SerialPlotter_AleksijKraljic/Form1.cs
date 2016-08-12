@@ -74,10 +74,10 @@ namespace SerialPlotter_AleksijKraljic
             fileNameBox.Text = fileName;
 
             // initial form object states
-            checkCh1.Enabled = false;
-            checkCh2.Enabled = false;
-            checkCh3.Enabled = false;
-            checkCh4.Enabled = false;
+            checkCh1.Enabled = true;
+            checkCh2.Enabled = true;
+            checkCh3.Enabled = true;
+            checkCh4.Enabled = true;
             checkAutoY.Checked = true;
             numericUDmaxY.Enabled = false;
             numericUDminY.Enabled = false;
@@ -90,6 +90,8 @@ namespace SerialPlotter_AleksijKraljic
             akMonitor.YAxis.Title.Text = "";
             akMonitor.XAxis.MajorGrid.IsVisible = true;
             akMonitor.YAxis.MajorGrid.IsVisible = true;
+
+            fileNameBox.Enabled = false;
         }
 
         private void btn_refreshCOM_Click(object sender, EventArgs e)
@@ -136,6 +138,10 @@ namespace SerialPlotter_AleksijKraljic
                 btn_refreshCOM.Enabled = false;
                 serialPort1.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
                 serialPort1.Write("b");
+                checkCh1.Enabled = true;
+                checkCh2.Enabled = true;
+                checkCh3.Enabled = true;
+                checkCh4.Enabled = true;
             }
 
         }
@@ -156,43 +162,46 @@ namespace SerialPlotter_AleksijKraljic
             if (RxStringComplete == true)
             {
                 splitReceivedString();
-                this.Invoke(new EventHandler(displayText));
-                this.Invoke(new EventHandler(toBuffer));
                 
-                try
+                this.Invoke(new EventHandler(toBuffer));
+
+                if (saveCheckBox.Checked)
                 {
-                    time_M.Add(time_ms);
- 
-                    if (measurements.Length == 1)
+                    try
                     {
-                        M1.Add(Convert.ToDouble(measurements[0]));
-                        M2.Add(0);
-                        M3.Add(0);
-                        M4.Add(0);
+                        time_M.Add(time_ms);
+
+                        if (measurements.Length == 1)
+                        {
+                            M1.Add(Convert.ToDouble(measurements[0]));
+                            M2.Add(0);
+                            M3.Add(0);
+                            M4.Add(0);
+                        }
+                        else if (measurements.Length == 2)
+                        {
+                            M1.Add(Convert.ToDouble(measurements[0]));
+                            M2.Add(Convert.ToDouble(measurements[1]));
+                            M3.Add(0);
+                            M4.Add(0);
+                        }
+                        else if (measurements.Length == 3)
+                        {
+                            M1.Add(Convert.ToDouble(measurements[0]));
+                            M2.Add(Convert.ToDouble(measurements[1]));
+                            M3.Add(Convert.ToDouble(measurements[2]));
+                            M4.Add(0);
+                        }
+                        else if (measurements.Length == 4)
+                        {
+                            M1.Add(Convert.ToDouble(measurements[0]));
+                            M2.Add(Convert.ToDouble(measurements[1]));
+                            M3.Add(Convert.ToDouble(measurements[2]));
+                            M4.Add(Convert.ToDouble(measurements[3]));
+                        }
                     }
-                    else if (measurements.Length == 2)
-                    {
-                        M1.Add(Convert.ToDouble(measurements[0]));
-                        M2.Add(Convert.ToDouble(measurements[1]));
-                        M3.Add(0);
-                        M4.Add(0);
-                    }
-                    else if (measurements.Length == 3)
-                    {
-                        M1.Add(Convert.ToDouble(measurements[0]));
-                        M2.Add(Convert.ToDouble(measurements[1]));
-                        M3.Add(Convert.ToDouble(measurements[2]));
-                        M4.Add(0);
-                    }
-                    else if (measurements.Length == 4)
-                    {
-                        M1.Add(Convert.ToDouble(measurements[0]));
-                        M2.Add(Convert.ToDouble(measurements[1]));
-                        M3.Add(Convert.ToDouble(measurements[2]));
-                        M4.Add(Convert.ToDouble(measurements[3]));
-                    }
+                    catch { }
                 }
-                catch { }
                 
                 RxString = "";
                 
@@ -213,6 +222,7 @@ namespace SerialPlotter_AleksijKraljic
             time_M.Clear();
 
             timer1.Start();
+            timer2.Start();
             s_watch.Start();
 
             akMonitor.CurveList.Clear();
@@ -235,39 +245,6 @@ namespace SerialPlotter_AleksijKraljic
         {
             // method that displays text in textboxes
             //string[] measurements = RxString.Split('_');
-            if (measurements.Length < 1)
-            {
-                checkCh1.Enabled = false;
-            }
-            else if (measurements.Length == 1)
-            {
-                checkCh1.Enabled = true;
-                checkCh2.Enabled = false;
-                checkCh3.Enabled = false;
-                checkCh4.Enabled = false;
-            }
-            else if (measurements.Length == 2)
-            {
-                checkCh1.Enabled = true;
-                checkCh2.Enabled = true;
-                checkCh3.Enabled = false;
-                checkCh4.Enabled = false;
-            }
-            else if (measurements.Length == 3)
-            {
-                checkCh1.Enabled = true;
-                checkCh2.Enabled = true;
-                checkCh3.Enabled = true;
-                checkCh4.Enabled = false;
-            }
-            else if (measurements.Length == 4)
-            {
-                checkCh1.Enabled = true;
-                checkCh2.Enabled = true;
-                checkCh3.Enabled = true;
-                checkCh4.Enabled = true;
-            }
-
             try
             {
                 textBox1.Text = measurements[0];
@@ -288,10 +265,14 @@ namespace SerialPlotter_AleksijKraljic
             btn_disconnect.Enabled = true;
 
             timer1.Stop();
+            timer2.Stop();
             s_watch.Stop();
             s_watch.Reset();
 
-            save_measurements();
+            if (saveCheckBox.Checked)
+            {
+                save_measurements();
+            }
         }
 
         private void save_measurements()
@@ -473,6 +454,26 @@ namespace SerialPlotter_AleksijKraljic
         private void splitReceivedString()
         {
             measurements = RxString.Split('_');
+        }
+
+        private void saveCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (saveCheckBox.Checked == true)
+            {
+                fileNameBox.Enabled = true;
+            }
+            else if (saveCheckBox.Checked == false)
+            {
+                fileNameBox.Enabled = false;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (displayCheckBox.Checked)
+            {
+                this.Invoke(new EventHandler(displayText));
+            }
         }
     }
 }

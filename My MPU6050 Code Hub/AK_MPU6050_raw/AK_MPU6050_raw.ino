@@ -70,6 +70,10 @@ void setup() {
     Serial.print("\n");
     */
 
+    accelgyro.setXGyroOffset(10);
+    accelgyro.setYGyroOffset(15);
+    accelgyro.setZGyroOffset(15);
+    
     // configure Arduino LED for
     pinMode(LED_PIN, OUTPUT);
 }
@@ -99,9 +103,9 @@ void loop() {
 //      if (Serial.read)
       #ifdef OUTPUT_READABLE_ACCELGYRO
           // display tab-separated accel/gyro x/y/z values
-          Serial.print(ax); Serial.print("_");
-          Serial.print(ay); Serial.print("_");
-          Serial.println(az);
+          Serial.print(gx); Serial.print("_");
+          Serial.print(gy); Serial.print("_");
+          Serial.println(gz);
       #endif
     }
     // blink LED to indicate activity
