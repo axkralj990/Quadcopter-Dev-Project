@@ -56,6 +56,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.displayCheckBox = new System.Windows.Forms.CheckBox();
             this.numericUDtime = new System.Windows.Forms.NumericUpDown();
             this.numericUDmaxY = new System.Windows.Forms.NumericUpDown();
             this.numericUDminY = new System.Windows.Forms.NumericUpDown();
@@ -68,7 +69,6 @@
             this.configDirectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label7 = new System.Windows.Forms.Label();
             this.fileNameBox = new System.Windows.Forms.TextBox();
-            this.displayCheckBox = new System.Windows.Forms.CheckBox();
             this.saveCheckBox = new System.Windows.Forms.CheckBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
@@ -351,6 +351,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data";
             // 
+            // displayCheckBox
+            // 
+            this.displayCheckBox.AutoSize = true;
+            this.displayCheckBox.Location = new System.Drawing.Point(6, 18);
+            this.displayCheckBox.Name = "displayCheckBox";
+            this.displayCheckBox.Size = new System.Drawing.Size(95, 17);
+            this.displayCheckBox.TabIndex = 38;
+            this.displayCheckBox.Text = "Display Values";
+            this.displayCheckBox.UseVisualStyleBackColor = true;
+            // 
             // numericUDtime
             // 
             this.numericUDtime.DecimalPlaces = 1;
@@ -505,7 +515,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(395, 214);
+            this.label7.Location = new System.Drawing.Point(393, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 36;
@@ -513,25 +523,15 @@
             // 
             // fileNameBox
             // 
-            this.fileNameBox.Location = new System.Drawing.Point(397, 230);
+            this.fileNameBox.Location = new System.Drawing.Point(395, 228);
             this.fileNameBox.Name = "fileNameBox";
             this.fileNameBox.Size = new System.Drawing.Size(123, 20);
             this.fileNameBox.TabIndex = 37;
             // 
-            // displayCheckBox
-            // 
-            this.displayCheckBox.AutoSize = true;
-            this.displayCheckBox.Location = new System.Drawing.Point(6, 18);
-            this.displayCheckBox.Name = "displayCheckBox";
-            this.displayCheckBox.Size = new System.Drawing.Size(95, 17);
-            this.displayCheckBox.TabIndex = 38;
-            this.displayCheckBox.Text = "Display Values";
-            this.displayCheckBox.UseVisualStyleBackColor = true;
-            // 
             // saveCheckBox
             // 
             this.saveCheckBox.AutoSize = true;
-            this.saveCheckBox.Location = new System.Drawing.Point(398, 194);
+            this.saveCheckBox.Location = new System.Drawing.Point(396, 192);
             this.saveCheckBox.Name = "saveCheckBox";
             this.saveCheckBox.Size = new System.Drawing.Size(123, 17);
             this.saveCheckBox.TabIndex = 40;

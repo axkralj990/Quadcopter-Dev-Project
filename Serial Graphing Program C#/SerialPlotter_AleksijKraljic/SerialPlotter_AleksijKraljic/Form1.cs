@@ -44,13 +44,13 @@ namespace SerialPlotter_AleksijKraljic
         GraphPane akMonitor = new GraphPane();
 
         // Circulat buffers and curve objects for all 4 values received
-        RollingPointPairList sensor1 = new RollingPointPairList(200);
+        RollingPointPairList sensor1 = new RollingPointPairList(500);
         LineItem ak_curve1;
-        RollingPointPairList sensor2 = new RollingPointPairList(200);
+        RollingPointPairList sensor2 = new RollingPointPairList(500);
         LineItem ak_curve2;
-        RollingPointPairList sensor3 = new RollingPointPairList(200);
+        RollingPointPairList sensor3 = new RollingPointPairList(500);
         LineItem ak_curve3;
-        RollingPointPairList sensor4 = new RollingPointPairList(200);
+        RollingPointPairList sensor4 = new RollingPointPairList(500);
         LineItem ak_curve4;
 
         public Form1()
