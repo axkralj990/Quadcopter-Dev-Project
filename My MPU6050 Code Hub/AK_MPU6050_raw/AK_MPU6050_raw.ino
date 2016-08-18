@@ -64,13 +64,13 @@ void setup() {
     Wire.endTransmission();
     //accelgyro.setFullScaleGyroRange(0);
     
-    accelgyro.setXAccelOffset(-1906);
-    accelgyro.setYAccelOffset(1967);
-    accelgyro.setZAccelOffset(1263);
+    accelgyro.setXAccelOffset(-2581);
+    accelgyro.setYAccelOffset(-923);
+    accelgyro.setZAccelOffset(1596);
     
-    accelgyro.setXGyroOffset(11);
-    accelgyro.setYGyroOffset(15);
-    accelgyro.setZGyroOffset(17);
+    accelgyro.setXGyroOffset(98);
+    accelgyro.setYGyroOffset(-36);
+    accelgyro.setZGyroOffset(25);
 
     pT = millis();
 }
