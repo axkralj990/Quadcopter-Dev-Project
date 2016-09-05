@@ -148,14 +148,17 @@ namespace SerialPlotter_AleksijKraljic
 
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            RxString += serialPort1.ReadExisting();
-            RxStringComplete = false;
-            if (RxString.Length > 2)
+            if (serialPort1.IsOpen)
             {
-                if (RxString.IndexOf("\n") != -1)
+                RxString += serialPort1.ReadExisting();
+                RxStringComplete = false;
+                if (RxString.Length > 2)
                 {
-                    RxStringComplete = true;
-                    RxString = RxString.Replace("\r\n", "");
+                    if (RxString.IndexOf("\n") != -1)
+                    {
+                        RxStringComplete = true;
+                        RxString = RxString.Replace("\r\n", "");
+                    }
                 }
             }
 
@@ -163,7 +166,7 @@ namespace SerialPlotter_AleksijKraljic
             {
                 splitReceivedString();
                 
-                this.Invoke(new EventHandler(toBuffer));
+                this.BeginInvoke(new EventHandler(toBuffer));
 
                 if (saveCheckBox.Checked)
                 {
@@ -314,6 +317,7 @@ namespace SerialPlotter_AleksijKraljic
             if (serialPort1.IsOpen)
             {
                 serialPort1.Close();
+
                 btn_connect.Enabled = true;
                 btn_disconnect.Enabled = false;
                 btn_start.Enabled = false;
@@ -409,7 +413,7 @@ namespace SerialPlotter_AleksijKraljic
         private void timer1_Tick(object sender, EventArgs e)
         {
             // timer that updates the graph
-            this.Invoke(new EventHandler(plot_data));
+            this.BeginInvoke(new EventHandler(plot_data));
         }
         
         private void checkAutoY_CheckedChanged(object sender, EventArgs e)
