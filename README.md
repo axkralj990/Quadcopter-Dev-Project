@@ -1,11 +1,11 @@
 # Quadcopter Project
 Hello!
 
-I started this project in order to learn all the programming skills required to build an ATMEGA328P-controlled quadcopter. I am starting with the very basics in order to understand everything I make during the project. My main motivation is to find a specific subject related to the flight-controller design of which I can write my masters thesis on. So far I have a few ideas, but I need to invest more time to really find what would be the best subject to work on. I am really interested in different flight control algorithms, inertial measurment filtering methods and guidance and navigation in general.
+I started this project in order to learn all the programming skills required to build an ATmega328P-controlled quadcopter. I am starting with the very basics in order to understand everything I make during the project. My main motivation is to find a specific subject related to the flight-controller design of which I can write my masters thesis on. So far I have a few ideas, but I need to invest more time to really find what would be the best subject to work on. I am really interested in different flight control algorithms, inertial measurment filtering methods and guidance and navigation in general.
 
-As a first objective I decided to design the prototype flight controller based on Arduino Uno. With a working prototype flight controller I will design my own board with ATMEGA328P. For inertial measurements I am using the Invensense MPU6050 IMU.
+As a first objective I decided to design the prototype flight controller based on Arduino Uno. With a working prototype flight controller I will design my own board with ATmega328P. For inertial measurements I am using the Invensense MPU6050 IMU.
 
-The controller design was greatly inspired by Joop Brokking's <a href="http://www.brokking.net">Youtube channel</a> and <a href="https://www.youtube.com/user/MacPuffdog/featured">blog</a>. I find his YMFC-3D quadcopter video tutorials of great help and will refer to them often during the project. The design of the quadcopter is also based on his. I have just received most of the components for the quadcopter and will post the parts list with images as soon as I assemble it.
+The controller design was greatly inspired by Joop Brokking's <a href="http://www.brokking.net">Youtube channel</a> and <a href="https://www.youtube.com/user/MacPuffdog/featured">blog</a>. I find his YMFC-3D quadcopter video tutorials of great help and will refer to them often during the project. The design is also based on the YMFC-3D. I have just received most of the components for the quadcopter and will post the parts list with images as soon as I assemble it.
 
 I used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
 
