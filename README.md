@@ -5,7 +5,7 @@ I started this project in order to familiarize myself with all the programming s
 
 As a first objective I decided to design the prototype flight controller based on Arduino Uno. With a working prototype flight controller I will design my own board with ATMEGA328P. For inertial measurements I am using the Invensense MPU6050 IMU.
 
-The controller design was greatly inspired by Joop Brokking's <a href="http://www.brokking.net">Youtube channel</a> and <a href="https://www.youtube.com/user/MacPuffdog/featured">blog</a>. I find his YMFC-3D quadcopter video tutorials of great help and will refer to them often during the project.
+The controller design was greatly inspired by Joop Brokking's <a href="http://www.brokking.net">Youtube channel</a> and <a href="https://www.youtube.com/user/MacPuffdog/featured">blog</a>. I find his YMFC-3D quadcopter video tutorials of great help and will refer to them often during the project. The design of the quadcopter is also based on his. I have just received most of the components for the quadcopter and will post the parts list with images as soon as I assemble it.
 
 I have also used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
 
@@ -53,7 +53,7 @@ In order to run the program you need to install <a href="http://zedgraph.sourcef
 <img src="MonitorC.JPG" height="500">
 </div>
 
-<h2>Libraries for ATmega328 and Arudino</h2>
+<h2>Libraries for ATmega328 and Arduino</h2>
 <b>1. AK_MPU6050_lib for ATmega328: </b>
 
 I am working on a library to use MPU6050 IMU with ATmega328P chip. As of September 19, 2016 the library contains the following functions:
