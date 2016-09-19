@@ -50,7 +50,7 @@ Code was inspired by <a href="https://github.com/mba7/SerialPort-RealTime-Data-P
 In order to run the program you need to install <a href="http://zedgraph.sourceforge.net/samples.html">ZedGraph</a>.
 
 <div align="center">
-<img src="Monitor_C#.jpg" height="500">
+<img src="Monitor_C#.JPG" height="500">
 </div>
 
 <h2>Libraries for ATmega328 and Arudino</h2>
