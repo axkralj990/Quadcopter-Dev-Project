@@ -1,15 +1,15 @@
 # Quadcopter Project
 Hello!
 
-I started this project in order to familiarize myself with all the programming skills required to build an ATMEGA328P-controlled quadcopter. I am starting with the very basics, so I can understand everything I make during the project.
+I started this project in order to familiarize myself with all the programming skills required to build an ATMEGA328P-controlled quadcopter. I am starting with the very basics in order to understand everything I make during the project. My main motivation is to find a specific subject related to the flight-controller design of which I can write my masters thesis on. So far I have a few ideas, but I need to invest more time to really find what would be the best subject to work on. I am really interested in different flight control algorithms, inertial measurment filtering methods and guidance and navigation in general.
 
 As a first objective I decided to design the prototype flight controller based on Arduino Uno. With a working prototype flight controller I will design my own board with ATMEGA328P. For inertial measurements I am using the Invensense MPU6050 IMU.
 
 The controller design was greatly inspired by Joop Brokking's <a href="http://www.brokking.net">Youtube channel</a> and <a href="https://www.youtube.com/user/MacPuffdog/featured">blog</a>. I find his YMFC-3D quadcopter video tutorials of great help and will refer to them often during the project. The design of the quadcopter is also based on his. I have just received most of the components for the quadcopter and will post the parts list with images as soon as I assemble it.
 
-I have also used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
+I used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
 
-I have created many tools to ease the development process. My starting point was the development of the serial graphing monitor. This is a necessary tool for signal analysis during the development. First I wrote graphing monitor with Python 2.7 and later with C#, since I wanted to learn C# for work purposes. Both serial graphing programs are described below.
+My starting point was the development of the serial graphing monitor. This is a necessary tool for signal analysis during the development. First I wrote graphing monitor with Python 2.7 and later with C#. Both serial graphing programs are described below.
 
 <h2> Serial Graphing Monitor </h2>
 
