@@ -1,7 +1,7 @@
 # Quadcopter Project
 Hello!
 
-I started this project in order to familiarize myself with all the programming skills required to build an ATMEGA328P-controlled quadcopter. I am starting with the very basics in order to understand everything I make during the project. My main motivation is to find a specific subject related to the flight-controller design of which I can write my masters thesis on. So far I have a few ideas, but I need to invest more time to really find what would be the best subject to work on. I am really interested in different flight control algorithms, inertial measurment filtering methods and guidance and navigation in general.
+I started this project in order to learn all the programming skills required to build an ATMEGA328P-controlled quadcopter. I am starting with the very basics in order to understand everything I make during the project. My main motivation is to find a specific subject related to the flight-controller design of which I can write my masters thesis on. So far I have a few ideas, but I need to invest more time to really find what would be the best subject to work on. I am really interested in different flight control algorithms, inertial measurment filtering methods and guidance and navigation in general.
 
 As a first objective I decided to design the prototype flight controller based on Arduino Uno. With a working prototype flight controller I will design my own board with ATMEGA328P. For inertial measurements I am using the Invensense MPU6050 IMU.
 
