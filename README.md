@@ -47,6 +47,33 @@ Code was inspired by <a href="https://github.com/mba7/SerialPort-RealTime-Data-P
 
 <b>2. Serial Graphing Monitor - C# Windows Forms</b> was written after I developed the graphing program in Python. I found a desire to improve my knowledge of C# so I used this opportunity  to write a program I needed.
 
+In order to run the program you need to install <a href="http://zedgraph.sourceforge.net/samples.html">ZedGraph</a>.
+
+<div align="center">
+<img src="Monitor_C#.jpg" height="500">
+</div>
+
+<h2>Libraries for ATmega328 and Arudino</h2>
+<b>1. AK_MPU6050_lib for ATmega328: </b>
+
+I am working on a library to use MPU6050 IMU with ATmega328P chip. As of September 19, 2016 the library contains the following functions:
+
+<ul>
+  <li>MPU6050_init()</li>
+  <li>MPU6050_test_I2C()</li>
+  <li>MPU6050_get_accel()</li>
+  <li>MPU6050_get_gyro()</li>
+  <li>MPU6050_set_sleepMode()</li>
+  <li>MPU6050_set_gyroFS()</li>
+  <li>MPU6050_set_accelFS()</li>
+  <li>MPU6050_set_clockSource()</li>
+</ul>
+
+The AK_MPU6050_lib uses <a href="https://github.com/g4lvanix/I2C-master-lib">I2c-master-lib by g4lvanix</a> for I2C communication with the MPU6050 chip.
+
+<b>2. USART library for ATmega328: </b>
+
+This is a slightly modified version of a USART library written by Elliot William for his <a href="http://www.littlehacks.org/avr-programming">AVR Programming book</a>. I must note that I have learned most of my AVR programming knowledge from this book and I highly recommend it.
 
 Author: alex.kraljic@gmail.com
 
