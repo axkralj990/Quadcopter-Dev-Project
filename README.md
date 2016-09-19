@@ -73,7 +73,7 @@ The AK_MPU6050_lib uses <a href="https://github.com/g4lvanix/I2C-master-lib">I2c
 
 <b>2. USART library for ATmega328: </b>
 
-This is a slightly modified version of a USART library written by Elliot William for his <a href="http://www.littlehacks.org/avr-programming">AVR Programming book</a>. I must note that I have learned most of my AVR programming knowledge from this book and I highly recommend it.
+This is a slightly modified version of a USART library written by Elliot Williams for his <a href="http://www.littlehacks.org/avr-programming">AVR Programming book</a>. I must note that I have learned most of my AVR programming knowledge from this book and I highly recommend it.
 
 Author: alex.kraljic@gmail.com
 
