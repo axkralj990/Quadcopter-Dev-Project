@@ -9,9 +9,11 @@ The controller design was greatly inspired by Joop Brokking's <a href="http://ww
 
 I have also used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
 
+I have created many tools to ease the development process. My starting point was the development of the serial graphing monitor. This is a necessary tool for analizing signals I work with during the development. First I wrote graphing monitor with Python 2.7 and later with C#, since I wanted to learn C# for work purposes. Both serial graphing programs are described below.
 
+<h1> Serial Graphing Monitor </h1>
 
-<b>1. Serial Graphing Monitor</b> is used to visualize the data sent via serial communication. I use it to analize the data sent from the MPU6050 IMU connected to Arduino. Current code is written for Python 2.7. If you want to run it on Python 3 you need to change a couple of things (For example: -Py 2: from Queue import Queue -Py 3: from queue import queue).
+<b>1. Serial Graphing Monitor - Python 2.7</b> is used to visualize the data sent via serial communication. I use it to analize the data sent from the MPU6050 IMU connected to Arduino. Current code is written for Python 2.7. If you want to run it on Python 3 you need to change a couple of things (For example: -Py 2: from Queue import Queue -Py 3: from queue import queue).
 
 <div align="center">
 <img src="Monitor.jpg" height="500">
@@ -46,3 +48,6 @@ Author: alex.kraljic@gmail.com
 
 Code was inspired by <a href="https://github.com/mba7/SerialPort-RealTime-Data-Plotter"> MBA7's SerialPort-RealTime-Data-Plotter </a> and
 <a href="http://eli.thegreenplace.net/2009/08/07/a-live-data-monitor-with-python-pyqt-and-pyserial/"> Eli Bendersky work</a>.
+
+<b>2. Serial Graphing Monitor - C# Windows Forms</b> was written after I developet the graphing program in Python. I found a desire to improve my knowledge of C# so I used this oportunity  to write a program I needed.
+

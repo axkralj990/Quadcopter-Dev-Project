@@ -116,9 +116,9 @@ void loop() {
     // =======================================================================
     
     if (start_measuring) { 
-      Serial.print(theta_CF); Serial.print("_");
-      Serial.print(phi_CF); Serial.print("_");
-      Serial.println(loop_time);
+      Serial.print(ax); Serial.print("_");
+      Serial.print(ay); Serial.print("_");
+      Serial.println(az);
     }
 
     //loop_time = !loop_time;
