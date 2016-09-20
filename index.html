@@ -108,9 +108,17 @@ Place the following files in a folder:
 
 <p>The AK_MPU6050_lib uses <a href="https://github.com/g4lvanix/I2C-master-lib">I2c-master-lib by g4lvanix</a> for I2C communication with the MPU6050 chip.</p>
 
-<p><h3>2. USART library for ATmega328: </h3></p>
+<h3>2. USART library for ATmega328: </h3>
 
 <p>This is a slightly modified version of a USART library written by Elliot Williams for his <a href="http://www.littlehacks.org/avr-programming">AVR Programming book</a>. I must note that I have learned most of my AVR programming knowledge from this book and I highly recommend it.</p>
+
+<h2>Servo motor control</h2>
+
+<p>9/20/2016 I started working on controlling servo motors and ESCs with ATmega328P. Quadcopters don't use servo motors, but achive the control solely with the motors, but for the sake of understanding the principals I used a servo motor, since it gave me a visual feedback.</p>
+
+<p>Servo motors turn to the desired position by receiving a 1000-2000us long pulse at a period of about 20ms (50Hz). 1500ms pulse should in fact turn the servo to its center position, while 2000ms and 1000ms pulses to its extremes. At first I thought about using the PWM signal with 50Hz frequency, but I decided to try and write my own, time-measuring, function similar to what Arduino's function micros() does. With that I could controll the servo in a similar way what Joop Brokking does in <a href="https://www.youtube.com/watch?v=fqEkVcqxtU8">this video.</a>. This method eliminates the need for an additional interrupt routine, which might mess things up like shown in the video. At first I tried to supply the servo with 1000-2000us pulses every 4ms (250kHz), because I had no idea about how servos worke. Soon enough I have realized that this was not the best for the motor, becaus it made strange noises. This in fact would work with fast ESC designed for quadcopter, since some of them can be controlled with frequencies as high as 400KHz. I have also tried controlling the servo with a much slower frequency - 10Hz, just to see how it behaved. With such a slow frequency, the accumulated voltage in the servo was very low and correspondingly the servo turne slowly.</p>
+
+<p>Because the flight control program already uses an interrupt routine that reads RC transmitter signals, I am not sure what would be the effect of adding another interrupt routine called every 4ms (for updating the ESCs). As mentioned previously, the method Joop Brokking used on his YMFC-3D avoids adding thi interrupt. I will have to conduct more reaserch and testing to find the best solution on how to control the ESCs. If anyone knows more about this subject, I would be more than happy if they could provide additional information.</p>
 
 <p>Author: alex.kraljic@gmail.com</p>
 
