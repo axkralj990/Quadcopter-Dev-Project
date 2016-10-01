@@ -13,7 +13,7 @@ My starting point was the development of the serial graphing monitor. This is a 
 
 <h2>Serial Graphing Monitor</h2>
 
-<h3>Moved to 2 separate repositories, one for the program in Python and another for the program in C#!</h3>
+<h1 color="red">Moved to 2 separate repositories, one for the program in Python and another for the program in C#!</h1>
 
 <b>1. Serial Graphing Monitor - Python 2.7</b> is used to visualize the data sent via serial communication. I use it to analyze the data sent from the MPU6050 IMU connected to Arduino. Current code is written for Python 2.7. If you want to run it on Python 3 you need to change a couple of things (For example: -Py 2: from Queue import Queue -Py 3: from queue import queue).
 
@@ -76,6 +76,14 @@ The AK_MPU6050_lib uses <a href="https://github.com/g4lvanix/I2C-master-lib">I2c
 <b>2. USART library for ATmega328: </b>
 
 This is a slightly modified version of a USART library written by Elliot Williams for his <a href="http://www.littlehacks.org/avr-programming">AVR Programming book</a>. I must note that I have learned most of my AVR programming knowledge from this book and I highly recommend it.
+
+<h2>Quadcopter Components</h2>
+
+I have finally received all the components for the quad. I bought almost everything from <a href="http://www.brokking.net/ymfc-al_main.html">Brokking's list</a> for his YMFC-3D AL quadcopter. Links to each part at dx.com are on his website. The only thing I bought in my local RC store was the LiPo charger and the batttery, since LiPo batteries could not be shipped to EU from dx.net.
+
+First problem I ran into was that I had no idea on how to work with LiPo batteries, since they be quite dangerous if not handled properly. <a href="http://www.tjinguytech.com/charging-how-tos">This link</a> taught me all I needed for now.
+
+I have also bought all the miscallaneous components, such as heat-shrink tubes, various cables, etc. I will be posting the complete parts list soon.
 
 Author: alex.kraljic@gmail.com
 
