@@ -13,7 +13,7 @@ My starting point was the development of the serial graphing monitor. This is a 
 
 <h2>Serial Graphing Monitor</h2>
 
-<h1 color="red">Moved to 2 separate repositories, one for the program in Python and another for the program in C#!</h1>
+<p color="red">Moved to 2 separate repositories, one for the program in Python and another for the program in C#!</p>
 
 <b>1. Serial Graphing Monitor - Python 2.7</b> is used to visualize the data sent via serial communication. I use it to analyze the data sent from the MPU6050 IMU connected to Arduino. Current code is written for Python 2.7. If you want to run it on Python 3 you need to change a couple of things (For example: -Py 2: from Queue import Queue -Py 3: from queue import queue).
 
