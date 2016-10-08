@@ -13,8 +13,8 @@ I used many libraries from other Github users. All references to the authors are
 - [ ] Finish the project website
 - [x] Read MPU6050 data
 - [ ] Calculate Roll/Pitch data (complementary filter)
-- [x] Read RC receiver data
-- [x] Output ESC data
+- [ ] Read RC receiver data
+- [ ] Output ESC data
 - [ ] Design the voltage regulator system
 - [ ] Design the controller board
 - [ ] Write ESC and MPU6050 calibration code
