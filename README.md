@@ -9,6 +9,18 @@ The controller design was greatly inspired by Joop Brokking's <a href="http://ww
 
 I used many libraries from other Github users. All references to the authors are under each subsection of the readme file where the library is used.
 
+### TO DO LIST
+- [ ] Finish the project website
+- [x] Read MPU6050 data
+- [ ] Calculate Roll/Pitch data (complementary filter)
+- [x] Read RC receiver data
+- [x] Output ESC data
+- [ ] Design the voltage regulator system
+- [ ] Design the controller board
+- [ ] Write ESC and MPU6050 calibration code
+- [ ] Balance propeller and measure vibrations
+- [ ] Design PID autolevel code
+
 My starting point was the development of the serial graphing monitor. This is a necessary tool for signal analysis during the development. First I wrote graphing monitor with Python 2.7 and later with C#. Both serial graphing programs are described below.
 
 <h2>Serial Graphing Monitor</h2>
