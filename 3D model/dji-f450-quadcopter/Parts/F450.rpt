@@ -1,0 +1,790 @@
+*****************************************************************
+      SolidWorks Corporation - IGES Processor Status Report
+*****************************************************************
+=================================================================
+General Information
+=================================================================
+Sending System Product I.D.  : D:\Alejandro\Universidad\Máster CAD CAM CIM\TFM\CAD\z_Ensamble2.prt
+Receiving System Product I.D.: D:\Alejandro\Universidad\Máster CAD CAM CIM\TFM\CAD\z_Ensamble2.prt
+File Name                    : C:\Users\Loren\Desktop\F450.igs
+Sending System               : NX V10.0
+Preprocessor Version         : SIEMENS PLM Software NX 10.0
+File Creation Date           : 20160225.030818
+Model Creation Date          : 20160225.025800
+Units                        : MM
+Model Space Scale            : 1
+Author                       : 
+Organization                 : 
+
+
+=================================================================
+Entity Processing Information
+=================================================================
+ERROR:   DE#  3329, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3329, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3405, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3405, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3633, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3633, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3909, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3909, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  4135, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  4135, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  4159, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  4159, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  4577, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  4577, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  4855, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  4855, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  5331, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  5331, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  5383, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  5383, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  5675, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  5675, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  5951, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  5951, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  6259, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  6259, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  6497, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  6497, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  6711, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  6711, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  6739, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  6739, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  8289, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE#  8289, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  9693, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE#  9693, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 10135, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 10135, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11117, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11117, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11133, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11133, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11371, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11371, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11619, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11619, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11671, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11671, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11853, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11853, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11903, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11903, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 11973, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 11973, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 12175, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 12175, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 12401, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 12401, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 12879, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 12879, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 14331, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 14331, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 14531, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 14531, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 14731, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 14731, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 14903, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 14903, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 15403, TYPE   144: Problem encountered in inner trimming loop.
+ERROR:   DE# 15403, TYPE   144: Problem encountered in inner trimming loop.
+ERROR:   DE# 16651, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 16651, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 16935, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 16935, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 18811, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 18811, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 21675, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 21675, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 23289, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 23289, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24059, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 24059, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24075, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 24075, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24705, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 24705, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24829, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 24829, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24871, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 24871, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 24913, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 24913, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25031, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25031, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25397, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25397, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25413, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25413, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25455, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25455, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25471, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25471, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25521, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25521, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25537, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25537, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25587, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25587, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25953, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25953, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 25995, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 25995, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26071, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26071, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26087, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26087, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26103, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26103, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26501, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26501, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26517, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26517, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26559, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26559, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26601, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26601, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 26651, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 26651, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27223, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27223, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27239, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27239, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27255, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27255, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27271, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27271, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27287, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27287, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 27337, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 27337, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 28031, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 28031, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 28047, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 28047, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 28131, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 28131, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 28853, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 28853, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 29167, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 29167, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 29213, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 29213, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 30077, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 30077, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 30845, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 30845, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 30887, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 30887, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 31097, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 31097, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 31719, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 31719, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 32405, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 32405, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 32507, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 32507, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 32777, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 32777, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 33065, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 33065, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 33267, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 33267, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 33729, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 33729, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 33893, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 33893, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 33973, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 33973, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34071, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 34071, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34121, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 34121, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34201, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 34201, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34681, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 34681, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34855, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 34855, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 34897, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 34897, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35111, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 35111, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35325, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35325, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35341, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35341, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35571, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35571, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35665, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35665, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35733, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35733, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35775, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 35775, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 35845, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 35845, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36225, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 36225, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36311, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 36311, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36327, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 36327, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36395, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 36395, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36463, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 36463, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36479, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 36479, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36545, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 36545, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 36587, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 36587, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37221, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 37221, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37267, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 37267, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37425, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 37425, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37511, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 37511, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37681, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 37681, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37839, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 37839, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 37963, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 37963, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 39403, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 39403, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 39413, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 39413, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 40359, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 40359, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 40853, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 40853, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 41207, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 41207, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 41307, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 41307, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 41369, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 41369, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 41797, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 41797, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 42491, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 42491, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 43177, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 43177, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 43311, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 43311, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 43425, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 43425, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 43613, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 43613, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 43713, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 43713, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44177, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 44177, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44193, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 44193, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44593, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 44593, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44665, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 44665, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44803, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 44803, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44827, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 44827, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 44895, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 44895, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 45343, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 45343, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 45427, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 45427, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 45497, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 45497, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 46155, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 46155, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 46171, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 46171, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 50749, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 50749, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 50873, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 50873, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 50909, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 50909, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 51455, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 51455, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 51517, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 51517, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 51811, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 51811, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 52353, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 52353, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 52369, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 52369, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 52551, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 52551, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 53135, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 53135, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 53791, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 53791, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 53921, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 53921, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 55149, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 55149, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 55459, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 55459, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 55469, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 55469, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 55519, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 55519, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 56125, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 56125, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 56163, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 56163, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 56181, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 56181, TYPE   144: Error repaired by using 3D trim curves.
+WARNING: DE# 57039, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 57155, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 57155, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 57225, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 57225, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 58059, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 58059, TYPE   144: Error repaired by using 3D trim curves.
+WARNING: DE# 58197, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 58763, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 58763, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 59005, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 59005, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 60849, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 60849, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 61053, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 61053, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 61411, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 61411, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 62297, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 62297, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 62481, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 62481, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 62589, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 62589, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 63325, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 63325, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 64059, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 64059, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 64075, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 64075, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 69861, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 69861, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 69949, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 69949, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 69967, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 69967, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 70017, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 70017, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 70115, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 70115, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 70663, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 70663, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 70711, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 70711, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 70839, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 70839, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 71215, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 71215, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 71271, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 71271, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 71289, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 71289, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 71305, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 71305, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 71427, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 71427, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 72285, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 72285, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 72641, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 72641, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 72957, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 72957, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 73213, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 73213, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 73737, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 73737, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 73785, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 73785, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 73843, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 73843, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 74503, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 74503, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 75335, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 75335, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 76083, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 76083, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 77353, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 77353, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 77807, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 77807, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 77999, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 77999, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 78331, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 78331, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 78575, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 78575, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 78595, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 78595, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 79119, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 79119, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 79483, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 79483, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 79499, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 79499, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 80047, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 80047, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 80295, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 80295, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 84221, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 84221, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 89049, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 89049, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 89181, TYPE   144: Problem encountered in inner trimming loop.
+WARNING: DE# 89181, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 89205, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 89205, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 91877, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 91877, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 93121, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 93121, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 93721, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 93721, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE# 94325, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE# 94325, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1621, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1621, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1631, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1631, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1641, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1641, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1653, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1653, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1669, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1669, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1679, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1679, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1689, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1689, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1701, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1701, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1719, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1719, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1729, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1729, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1741, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1741, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1753, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1753, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1771, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1771, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1783, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1783, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1795, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1795, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1807, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1807, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1819, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1819, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1833, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1833, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1847, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1847, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1857, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1857, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1869, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1869, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1879, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1879, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1895, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1895, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1907, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1907, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1921, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1921, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1931, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1931, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1945, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1945, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1957, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1957, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1969, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1969, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1981, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1981, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  1993, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  1993, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2005, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2005, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2017, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2017, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2029, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2029, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2045, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2045, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2057, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2057, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2071, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2071, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2083, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2083, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2097, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2097, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2107, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2107, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2119, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2119, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2131, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2131, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2145, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2145, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2157, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2157, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2171, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2171, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2181, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2181, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2195, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2195, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2205, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2205, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2219, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2219, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2229, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2229, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2243, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2243, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2253, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2253, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2265, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2265, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2277, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2277, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2293, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2293, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2307, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2307, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2321, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2321, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2331, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2331, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2341, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2341, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2355, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2355, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2367, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2367, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2381, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2381, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2393, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2393, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2405, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2405, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2417, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2417, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2429, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2429, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2441, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2441, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2455, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2455, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2469, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2469, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2481, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2481, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2493, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2493, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2505, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2505, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2517, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2517, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2531, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2531, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2545, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2545, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2557, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2557, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2571, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2571, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2581, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2581, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2593, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2593, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2605, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2605, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2615, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2615, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2629, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2629, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2641, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2641, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2653, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2653, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2665, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2665, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2677, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2677, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2691, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2691, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2701, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2701, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2715, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2715, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2727, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2727, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2739, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2739, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2751, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2751, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2761, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2761, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2775, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2775, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2789, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2789, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2799, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2799, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2809, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2809, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2823, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2823, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2835, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2835, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2847, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2847, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2859, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2859, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2871, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2871, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2883, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2883, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2895, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2895, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2907, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2907, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2919, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2919, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2929, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2929, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2943, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2943, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2955, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2955, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2967, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2967, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2979, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2979, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  2989, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  2989, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3003, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3003, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3013, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3013, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3025, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3025, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3035, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3035, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3049, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3049, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3059, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3059, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3069, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3069, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3083, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3083, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3095, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3095, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3105, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3105, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3115, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3115, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3127, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3127, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3137, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3137, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3149, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3149, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3161, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3161, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3171, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3171, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3181, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3181, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3191, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3191, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3203, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3203, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3215, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3215, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3227, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3227, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3237, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3237, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3251, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3251, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3261, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3261, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3273, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3273, TYPE   144: Error repaired by using 3D trim curves.
+ERROR:   DE#  3285, TYPE   144: Problem encountered in outer trimming loop.
+WARNING: DE#  3285, TYPE   144: Error repaired by using 3D trim curves.
+
+
+=================================================================
+Precision analysis of IGES file:
+=================================================================
+  Most prevalent number of significant digits:              14
+  Highest number of significant digits:                     14
+  Average number of significant digits:                13.8074
+  Maximum distance to origin:                          220.601
+  Minimum distance to origin:                        0.0446332
+  Effective number of significant digits:              13.9998
+
+Some corrupted data were encountered and repaired during import
+
+
+=================================================================
+Entity Summary
+=================================================================
+-----------------------------------------------------------------
+Type Name                                         Count Converted
+---- ----                                         ----- ---------
+100  Arc                                           5374      5374
+102  Composite curve                               5578      5578
+104  Conic arc                                      114       114
+108  Plane                                           32        32
+110  Line                                          7079      7079
+116  Point                                          328       328
+124  Transformation matrix                          482       482
+126  Rational B-spline curve                      19737     19737
+128  Rational B-spline surface                     4703      4703
+142  Curve on a parametric surface                 3371      3371
+144  Trimmed parametric surface                    2727      2726
+308  Subfigure definition                            57        57
+314  Color definition                                35        35
+406  Property                                      2879      2879
+408  Singular subfigure instance                    142       142
+410  View                                             8         0
+_________________________________________________________________
+
+
+=================================================================
+Result Summary
+=================================================================
+SolidWorks Feature Type                Count
+-----------------------                -----
+Solid feature(s)                       105
+Surface feature(s)                     38
+Curve/Sketch feature(s)                0
+--------------------------------------------
+Start time: Tuesday, October 04, 2016 11:00:38
+Finish time: Tuesday, October 04, 2016 11:02:08
+Processing time: 0 days, 00 hours, 01 mins, 30 secs
