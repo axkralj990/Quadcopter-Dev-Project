@@ -11,7 +11,7 @@ I used many libraries from other Github users. All references to the authors are
 
 ### TO DO LIST
 - [x] Read MPU6050 data
-- [x[ Write the MPU6050 library and get desired Gyro data
+- [x] Write the MPU6050 library and get desired Gyro data
 - [ ] Read RC receiver data
 - [ ] Output ESC data
 - [ ] Design rate-mode PID control
