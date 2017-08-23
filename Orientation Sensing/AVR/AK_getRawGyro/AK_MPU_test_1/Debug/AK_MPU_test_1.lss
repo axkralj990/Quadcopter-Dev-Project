@@ -1,0 +1,1698 @@
+
+AK_MPU_test_1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000056  00800100  00000ad6  00000b4a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000ad6  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000ba0  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000bd0  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000188  00000000  00000000  00000c10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001fae  00000000  00000000  00000d98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007c2  00000000  00000000  00002d46  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000812  00000000  00000000  00003508  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000544  00000000  00000000  00003d1c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000639  00000000  00000000  00004260  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000017cc  00000000  00000000  00004899  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000178  00000000  00000000  00006065  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 ed       	ldi	r30, 0xD6	; 214
+  7c:	fa e0       	ldi	r31, 0x0A	; 10
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a6 35       	cpi	r26, 0x56	; 86
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	0e 94 21 04 	call	0x842	; 0x842 <main>
+  8e:	0c 94 69 05 	jmp	0xad2	; 0xad2 <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000096 <MPU6050_test_I2C>:
+	long ac_bias[3] = {0, 0, 0};
+	MPU6050_set_accelFS(2); // set to 8G range
+	
+	for (uint16_t i = 0; i < 1000; i++) {
+		MPU6050_get_accel(accel);
+		for (uint8_t j = 0; j < 3; j++) {
+  96:	cf 93       	push	r28
+void MPU6050_auto_set_accel_bias() {
+	int16_t accel[3];
+	long ac_bias[3] = {0, 0, 0};
+	MPU6050_set_accelFS(2); // set to 8G range
+	
+	for (uint16_t i = 0; i < 1000; i++) {
+  98:	df 93       	push	r29
+			ac_bias[j] += accel[j];
+		}
+	}
+	
+	for (uint8_t i = 0; i < 3; i++) {
+		ac_bias[i] /= -1000;
+  9a:	1f 92       	push	r1
+  9c:	cd b7       	in	r28, 0x3d	; 61
+  9e:	de b7       	in	r29, 0x3e	; 62
+  a0:	19 82       	std	Y+1, r1	; 0x01
+  a2:	21 e0       	ldi	r18, 0x01	; 1
+  a4:	30 e0       	ldi	r19, 0x00	; 0
+  a6:	ae 01       	movw	r20, r28
+  a8:	4f 5f       	subi	r20, 0xFF	; 255
+  aa:	5f 4f       	sbci	r21, 0xFF	; 255
+  ac:	65 e7       	ldi	r22, 0x75	; 117
+  ae:	80 ed       	ldi	r24, 0xD0	; 208
+  b0:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+  b4:	81 e0       	ldi	r24, 0x01	; 1
+  b6:	99 81       	ldd	r25, Y+1	; 0x01
+  b8:	98 36       	cpi	r25, 0x68	; 104
+  ba:	09 f0       	breq	.+2      	; 0xbe <MPU6050_test_I2C+0x28>
+  bc:	80 e0       	ldi	r24, 0x00	; 0
+  be:	0f 90       	pop	r0
+  c0:	df 91       	pop	r29
+  c2:	cf 91       	pop	r28
+  c4:	08 95       	ret
+
+000000c6 <MPU6050_get_gyro>:
+  c6:	0f 93       	push	r16
+  c8:	1f 93       	push	r17
+  ca:	cf 93       	push	r28
+  cc:	df 93       	push	r29
+  ce:	00 d0       	rcall	.+0      	; 0xd0 <MPU6050_get_gyro+0xa>
+  d0:	00 d0       	rcall	.+0      	; 0xd2 <MPU6050_get_gyro+0xc>
+  d2:	00 d0       	rcall	.+0      	; 0xd4 <MPU6050_get_gyro+0xe>
+  d4:	cd b7       	in	r28, 0x3d	; 61
+  d6:	de b7       	in	r29, 0x3e	; 62
+  d8:	8c 01       	movw	r16, r24
+  da:	26 e0       	ldi	r18, 0x06	; 6
+  dc:	30 e0       	ldi	r19, 0x00	; 0
+  de:	ae 01       	movw	r20, r28
+  e0:	4f 5f       	subi	r20, 0xFF	; 255
+  e2:	5f 4f       	sbci	r21, 0xFF	; 255
+  e4:	63 e4       	ldi	r22, 0x43	; 67
+  e6:	80 ed       	ldi	r24, 0xD0	; 208
+  e8:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+  ec:	89 81       	ldd	r24, Y+1	; 0x01
+  ee:	90 e0       	ldi	r25, 0x00	; 0
+  f0:	98 2f       	mov	r25, r24
+  f2:	88 27       	eor	r24, r24
+	}
+	
+	MPU6050_set_accel_bias_reg(ac_bias);
+  f4:	2a 81       	ldd	r18, Y+2	; 0x02
+  f6:	82 2b       	or	r24, r18
+  f8:	f8 01       	movw	r30, r16
+  fa:	91 83       	std	Z+1, r25	; 0x01
+    } else if (__radix < 2 || __radix > 36) {
+	*__s = 0;
+	return __s;
+    } else {
+	extern char *__itoa_ncheck (int, char *, unsigned char);
+	return __itoa_ncheck (__val, __s, __radix);
+  fc:	80 83       	st	Z, r24
+  fe:	2b 81       	ldd	r18, Y+3	; 0x03
+ 100:	30 e0       	ldi	r19, 0x00	; 0
+ 102:	32 2f       	mov	r19, r18
+ 104:	22 27       	eor	r18, r18
+ 106:	8c 81       	ldd	r24, Y+4	; 0x04
+ 108:	28 2b       	or	r18, r24
+ 10a:	33 83       	std	Z+3, r19	; 0x03
+ 10c:	22 83       	std	Z+2, r18	; 0x02
+ 10e:	2d 81       	ldd	r18, Y+5	; 0x05
+ 110:	30 e0       	ldi	r19, 0x00	; 0
+ 112:	32 2f       	mov	r19, r18
+ 114:	22 27       	eor	r18, r18
+ 116:	8e 81       	ldd	r24, Y+6	; 0x06
+ 118:	28 2b       	or	r18, r24
+ 11a:	35 83       	std	Z+5, r19	; 0x05
+ 11c:	24 83       	std	Z+4, r18	; 0x04
+ 11e:	26 96       	adiw	r28, 0x06	; 6
+ 120:	0f b6       	in	r0, 0x3f	; 63
+ 122:	f8 94       	cli
+ 124:	de bf       	out	0x3e, r29	; 62
+ 126:	0f be       	out	0x3f, r0	; 63
+ 128:	cd bf       	out	0x3d, r28	; 61
+ 12a:	df 91       	pop	r29
+	
+	char gyrX_str[16], gyrY_str[16], gyrZ_str[16];
+	itoa(ac_bias[0],gyrX_str,10);
+	itoa(ac_bias[1],gyrY_str,10);
+	itoa(ac_bias[2],gyrZ_str,10);
+	printString(gyrX_str); printString("_");
+ 12c:	cf 91       	pop	r28
+ 12e:	1f 91       	pop	r17
+ 130:	0f 91       	pop	r16
+ 132:	08 95       	ret
+
+00000134 <MPU6050_set_sleepMode>:
+ 134:	cf 93       	push	r28
+ 136:	df 93       	push	r29
+ 138:	00 d0       	rcall	.+0      	; 0x13a <MPU6050_set_sleepMode+0x6>
+ 13a:	cd b7       	in	r28, 0x3d	; 61
+	printString(gyrY_str); printString("_");
+ 13c:	de b7       	in	r29, 0x3e	; 62
+ 13e:	88 23       	and	r24, r24
+ 140:	c1 f0       	breq	.+48     	; 0x172 <MPU6050_set_sleepMode+0x3e>
+ 142:	81 30       	cpi	r24, 0x01	; 1
+ 144:	61 f5       	brne	.+88     	; 0x19e <MPU6050_set_sleepMode+0x6a>
+ 146:	21 e0       	ldi	r18, 0x01	; 1
+ 148:	30 e0       	ldi	r19, 0x00	; 0
+ 14a:	ae 01       	movw	r20, r28
+	printLine(gyrZ_str);
+ 14c:	4f 5f       	subi	r20, 0xFF	; 255
+ 14e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 150:	6b e6       	ldi	r22, 0x6B	; 107
+ 152:	80 ed       	ldi	r24, 0xD0	; 208
+}
+ 154:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+ 158:	89 81       	ldd	r24, Y+1	; 0x01
+ 15a:	80 64       	ori	r24, 0x40	; 64
+ 15c:	8a 83       	std	Y+2, r24	; 0x02
+ 15e:	21 e0       	ldi	r18, 0x01	; 1
+ 160:	30 e0       	ldi	r19, 0x00	; 0
+ 162:	ae 01       	movw	r20, r28
+ 164:	4e 5f       	subi	r20, 0xFE	; 254
+ 166:	5f 4f       	sbci	r21, 0xFF	; 255
+ 168:	6b e6       	ldi	r22, 0x6B	; 107
+ 16a:	80 ed       	ldi	r24, 0xD0	; 208
+ 16c:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+ 170:	2b c0       	rjmp	.+86     	; 0x1c8 <MPU6050_set_sleepMode+0x94>
+ 172:	21 e0       	ldi	r18, 0x01	; 1
+				power_reg_write = power_reg_read & ~(0b01000000);
+				power_reg_write |= (0b01000000);
+				i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+				break;
+		case 0:
+				i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 174:	30 e0       	ldi	r19, 0x00	; 0
+ 176:	ae 01       	movw	r20, r28
+ 178:	4f 5f       	subi	r20, 0xFF	; 255
+ 17a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 17c:	6b e6       	ldi	r22, 0x6B	; 107
+ 17e:	80 ed       	ldi	r24, 0xD0	; 208
+ 180:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+				power_reg_write = power_reg_read & ~(0b01000000);
+ 184:	89 81       	ldd	r24, Y+1	; 0x01
+ 186:	8f 7b       	andi	r24, 0xBF	; 191
+ 188:	8a 83       	std	Y+2, r24	; 0x02
+				power_reg_write |= (0b00000000);
+				i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 18a:	21 e0       	ldi	r18, 0x01	; 1
+ 18c:	30 e0       	ldi	r19, 0x00	; 0
+ 18e:	ae 01       	movw	r20, r28
+ 190:	4e 5f       	subi	r20, 0xFE	; 254
+ 192:	5f 4f       	sbci	r21, 0xFF	; 255
+ 194:	6b e6       	ldi	r22, 0x6B	; 107
+ 196:	80 ed       	ldi	r24, 0xD0	; 208
+ 198:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+				break;
+ 19c:	15 c0       	rjmp	.+42     	; 0x1c8 <MPU6050_set_sleepMode+0x94>
+		default:
+				i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 19e:	21 e0       	ldi	r18, 0x01	; 1
+ 1a0:	30 e0       	ldi	r19, 0x00	; 0
+ 1a2:	ae 01       	movw	r20, r28
+ 1a4:	4f 5f       	subi	r20, 0xFF	; 255
+ 1a6:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1a8:	6b e6       	ldi	r22, 0x6B	; 107
+ 1aa:	80 ed       	ldi	r24, 0xD0	; 208
+ 1ac:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+				power_reg_write = power_reg_read & ~(0b01000000);
+ 1b0:	89 81       	ldd	r24, Y+1	; 0x01
+				power_reg_write |= (0b01000000);
+ 1b2:	80 64       	ori	r24, 0x40	; 64
+ 1b4:	8a 83       	std	Y+2, r24	; 0x02
+				i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 1b6:	21 e0       	ldi	r18, 0x01	; 1
+ 1b8:	30 e0       	ldi	r19, 0x00	; 0
+ 1ba:	ae 01       	movw	r20, r28
+ 1bc:	4e 5f       	subi	r20, 0xFE	; 254
+ 1be:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1c0:	6b e6       	ldi	r22, 0x6B	; 107
+ 1c2:	80 ed       	ldi	r24, 0xD0	; 208
+ 1c4:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+				break;
+	}
+}
+ 1c8:	0f 90       	pop	r0
+ 1ca:	0f 90       	pop	r0
+ 1cc:	df 91       	pop	r29
+ 1ce:	cf 91       	pop	r28
+ 1d0:	08 95       	ret
+
+000001d2 <MPU6050_set_gyroFS>:
+
+void MPU6050_set_gyroFS(uint8_t gyroFS)
+{
+ 1d2:	cf 93       	push	r28
+ 1d4:	df 93       	push	r29
+ 1d6:	1f 92       	push	r1
+ 1d8:	cd b7       	in	r28, 0x3d	; 61
+ 1da:	de b7       	in	r29, 0x3e	; 62
+	uint8_t gyroFSregValue = 0;
+	
+	switch(gyroFS) {
+ 1dc:	82 30       	cpi	r24, 0x02	; 2
+ 1de:	49 f0       	breq	.+18     	; 0x1f2 <MPU6050_set_gyroFS+0x20>
+ 1e0:	83 30       	cpi	r24, 0x03	; 3
+ 1e2:	51 f0       	breq	.+20     	; 0x1f8 <MPU6050_set_gyroFS+0x26>
+ 1e4:	81 30       	cpi	r24, 0x01	; 1
+ 1e6:	11 f0       	breq	.+4      	; 0x1ec <MPU6050_set_gyroFS+0x1a>
+	}
+}
+
+void MPU6050_set_gyroFS(uint8_t gyroFS)
+{
+	uint8_t gyroFSregValue = 0;
+ 1e8:	19 82       	std	Y+1, r1	; 0x01
+ 1ea:	08 c0       	rjmp	.+16     	; 0x1fc <MPU6050_set_gyroFS+0x2a>
+	switch(gyroFS) {
+		case 0:
+			gyroFSregValue = 0b00000000;
+			break;
+		case 1:
+			gyroFSregValue = 0b00001000;
+ 1ec:	88 e0       	ldi	r24, 0x08	; 8
+ 1ee:	89 83       	std	Y+1, r24	; 0x01
+			break;
+ 1f0:	05 c0       	rjmp	.+10     	; 0x1fc <MPU6050_set_gyroFS+0x2a>
+		case 2:
+			gyroFSregValue = 0b00010000;
+ 1f2:	80 e1       	ldi	r24, 0x10	; 16
+ 1f4:	89 83       	std	Y+1, r24	; 0x01
+			break;
+ 1f6:	02 c0       	rjmp	.+4      	; 0x1fc <MPU6050_set_gyroFS+0x2a>
+		case 3:
+			gyroFSregValue = 0b00011000;
+ 1f8:	88 e1       	ldi	r24, 0x18	; 24
+ 1fa:	89 83       	std	Y+1, r24	; 0x01
+			break;
+		default:
+			gyroFSregValue = 0b00000000;
+	}
+	i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_GYRO_CONFIG,&gyroFSregValue,1);
+ 1fc:	21 e0       	ldi	r18, 0x01	; 1
+ 1fe:	30 e0       	ldi	r19, 0x00	; 0
+ 200:	ae 01       	movw	r20, r28
+ 202:	4f 5f       	subi	r20, 0xFF	; 255
+ 204:	5f 4f       	sbci	r21, 0xFF	; 255
+ 206:	6b e1       	ldi	r22, 0x1B	; 27
+ 208:	80 ed       	ldi	r24, 0xD0	; 208
+ 20a:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+}
+ 20e:	0f 90       	pop	r0
+ 210:	df 91       	pop	r29
+ 212:	cf 91       	pop	r28
+ 214:	08 95       	ret
+
+00000216 <MPU6050_set_accelFS>:
+
+void MPU6050_set_accelFS(uint8_t accelFS)
+{
+ 216:	cf 93       	push	r28
+ 218:	df 93       	push	r29
+ 21a:	00 d0       	rcall	.+0      	; 0x21c <MPU6050_set_accelFS+0x6>
+ 21c:	cd b7       	in	r28, 0x3d	; 61
+ 21e:	de b7       	in	r29, 0x3e	; 62
+	uint8_t accel_config_read, accel_config_write;
+	
+	switch(accelFS) {
+ 220:	81 30       	cpi	r24, 0x01	; 1
+ 222:	e9 f0       	breq	.+58     	; 0x25e <MPU6050_set_accelFS+0x48>
+ 224:	30 f0       	brcs	.+12     	; 0x232 <MPU6050_set_accelFS+0x1c>
+ 226:	82 30       	cpi	r24, 0x02	; 2
+ 228:	89 f1       	breq	.+98     	; 0x28c <MPU6050_set_accelFS+0x76>
+ 22a:	83 30       	cpi	r24, 0x03	; 3
+ 22c:	09 f4       	brne	.+2      	; 0x230 <MPU6050_set_accelFS+0x1a>
+ 22e:	45 c0       	rjmp	.+138    	; 0x2ba <MPU6050_set_accelFS+0xa4>
+ 230:	5a c0       	rjmp	.+180    	; 0x2e6 <MPU6050_set_accelFS+0xd0>
+		case 0:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_read, 1);
+ 232:	21 e0       	ldi	r18, 0x01	; 1
+ 234:	30 e0       	ldi	r19, 0x00	; 0
+ 236:	ae 01       	movw	r20, r28
+ 238:	4f 5f       	subi	r20, 0xFF	; 255
+ 23a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 23c:	6c e1       	ldi	r22, 0x1C	; 28
+ 23e:	80 ed       	ldi	r24, 0xD0	; 208
+ 240:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			accel_config_write = accel_config_read & ~(0b00011000);
+ 244:	89 81       	ldd	r24, Y+1	; 0x01
+ 246:	87 7e       	andi	r24, 0xE7	; 231
+ 248:	8a 83       	std	Y+2, r24	; 0x02
+			accel_config_write |= (0b00000000);
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_write, 1);
+ 24a:	21 e0       	ldi	r18, 0x01	; 1
+ 24c:	30 e0       	ldi	r19, 0x00	; 0
+ 24e:	ae 01       	movw	r20, r28
+ 250:	4e 5f       	subi	r20, 0xFE	; 254
+ 252:	5f 4f       	sbci	r21, 0xFF	; 255
+ 254:	6c e1       	ldi	r22, 0x1C	; 28
+ 256:	80 ed       	ldi	r24, 0xD0	; 208
+ 258:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 25c:	59 c0       	rjmp	.+178    	; 0x310 <MPU6050_set_accelFS+0xfa>
+		case 1:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_read, 1);
+ 25e:	21 e0       	ldi	r18, 0x01	; 1
+ 260:	30 e0       	ldi	r19, 0x00	; 0
+ 262:	ae 01       	movw	r20, r28
+ 264:	4f 5f       	subi	r20, 0xFF	; 255
+ 266:	5f 4f       	sbci	r21, 0xFF	; 255
+ 268:	6c e1       	ldi	r22, 0x1C	; 28
+ 26a:	80 ed       	ldi	r24, 0xD0	; 208
+ 26c:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			accel_config_write = accel_config_read & ~(0b00011000);
+ 270:	89 81       	ldd	r24, Y+1	; 0x01
+ 272:	87 7e       	andi	r24, 0xE7	; 231
+			accel_config_write |= (0b00001000);
+ 274:	88 60       	ori	r24, 0x08	; 8
+ 276:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_write, 1);
+ 278:	21 e0       	ldi	r18, 0x01	; 1
+ 27a:	30 e0       	ldi	r19, 0x00	; 0
+ 27c:	ae 01       	movw	r20, r28
+ 27e:	4e 5f       	subi	r20, 0xFE	; 254
+ 280:	5f 4f       	sbci	r21, 0xFF	; 255
+ 282:	6c e1       	ldi	r22, 0x1C	; 28
+ 284:	80 ed       	ldi	r24, 0xD0	; 208
+ 286:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 28a:	42 c0       	rjmp	.+132    	; 0x310 <MPU6050_set_accelFS+0xfa>
+		case 2:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_read, 1);
+ 28c:	21 e0       	ldi	r18, 0x01	; 1
+ 28e:	30 e0       	ldi	r19, 0x00	; 0
+ 290:	ae 01       	movw	r20, r28
+ 292:	4f 5f       	subi	r20, 0xFF	; 255
+ 294:	5f 4f       	sbci	r21, 0xFF	; 255
+ 296:	6c e1       	ldi	r22, 0x1C	; 28
+ 298:	80 ed       	ldi	r24, 0xD0	; 208
+ 29a:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			accel_config_write = accel_config_read & ~(0b00011000);
+ 29e:	89 81       	ldd	r24, Y+1	; 0x01
+ 2a0:	87 7e       	andi	r24, 0xE7	; 231
+			accel_config_write |= (0b00010000);
+ 2a2:	80 61       	ori	r24, 0x10	; 16
+ 2a4:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_write, 1);
+ 2a6:	21 e0       	ldi	r18, 0x01	; 1
+ 2a8:	30 e0       	ldi	r19, 0x00	; 0
+ 2aa:	ae 01       	movw	r20, r28
+ 2ac:	4e 5f       	subi	r20, 0xFE	; 254
+ 2ae:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2b0:	6c e1       	ldi	r22, 0x1C	; 28
+ 2b2:	80 ed       	ldi	r24, 0xD0	; 208
+ 2b4:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 2b8:	2b c0       	rjmp	.+86     	; 0x310 <MPU6050_set_accelFS+0xfa>
+		case 3:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_read, 1);
+ 2ba:	21 e0       	ldi	r18, 0x01	; 1
+ 2bc:	30 e0       	ldi	r19, 0x00	; 0
+ 2be:	ae 01       	movw	r20, r28
+ 2c0:	4f 5f       	subi	r20, 0xFF	; 255
+ 2c2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2c4:	6c e1       	ldi	r22, 0x1C	; 28
+ 2c6:	80 ed       	ldi	r24, 0xD0	; 208
+ 2c8:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			accel_config_write = accel_config_read & ~(0b00011000);
+ 2cc:	89 81       	ldd	r24, Y+1	; 0x01
+			accel_config_write |= (0b00011000);
+ 2ce:	88 61       	ori	r24, 0x18	; 24
+ 2d0:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_write, 1);
+ 2d2:	21 e0       	ldi	r18, 0x01	; 1
+ 2d4:	30 e0       	ldi	r19, 0x00	; 0
+ 2d6:	ae 01       	movw	r20, r28
+ 2d8:	4e 5f       	subi	r20, 0xFE	; 254
+ 2da:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2dc:	6c e1       	ldi	r22, 0x1C	; 28
+ 2de:	80 ed       	ldi	r24, 0xD0	; 208
+ 2e0:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 2e4:	15 c0       	rjmp	.+42     	; 0x310 <MPU6050_set_accelFS+0xfa>
+		default:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_read, 1);
+ 2e6:	21 e0       	ldi	r18, 0x01	; 1
+ 2e8:	30 e0       	ldi	r19, 0x00	; 0
+ 2ea:	ae 01       	movw	r20, r28
+ 2ec:	4f 5f       	subi	r20, 0xFF	; 255
+ 2ee:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2f0:	6c e1       	ldi	r22, 0x1C	; 28
+ 2f2:	80 ed       	ldi	r24, 0xD0	; 208
+ 2f4:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			accel_config_write = accel_config_read & ~(0b00011000);
+ 2f8:	89 81       	ldd	r24, Y+1	; 0x01
+ 2fa:	87 7e       	andi	r24, 0xE7	; 231
+ 2fc:	8a 83       	std	Y+2, r24	; 0x02
+			accel_config_write |= (0b00000000);
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_ACCEL_CONFIG, &accel_config_write, 1);
+ 2fe:	21 e0       	ldi	r18, 0x01	; 1
+ 300:	30 e0       	ldi	r19, 0x00	; 0
+ 302:	ae 01       	movw	r20, r28
+ 304:	4e 5f       	subi	r20, 0xFE	; 254
+ 306:	5f 4f       	sbci	r21, 0xFF	; 255
+ 308:	6c e1       	ldi	r22, 0x1C	; 28
+ 30a:	80 ed       	ldi	r24, 0xD0	; 208
+ 30c:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+	}
+}
+ 310:	0f 90       	pop	r0
+ 312:	0f 90       	pop	r0
+ 314:	df 91       	pop	r29
+ 316:	cf 91       	pop	r28
+ 318:	08 95       	ret
+
+0000031a <MPU6050_set_clockSource>:
+
+void MPU6050_set_clockSource(uint8_t clockSource)
+{
+ 31a:	cf 93       	push	r28
+ 31c:	df 93       	push	r29
+ 31e:	00 d0       	rcall	.+0      	; 0x320 <MPU6050_set_clockSource+0x6>
+ 320:	cd b7       	in	r28, 0x3d	; 61
+ 322:	de b7       	in	r29, 0x3e	; 62
+	uint8_t power_reg_read, power_reg_write;
+	switch(clockSource) {
+ 324:	81 30       	cpi	r24, 0x01	; 1
+ 326:	e9 f0       	breq	.+58     	; 0x362 <MPU6050_set_clockSource+0x48>
+ 328:	30 f0       	brcs	.+12     	; 0x336 <MPU6050_set_clockSource+0x1c>
+ 32a:	82 30       	cpi	r24, 0x02	; 2
+ 32c:	89 f1       	breq	.+98     	; 0x390 <MPU6050_set_clockSource+0x76>
+ 32e:	83 30       	cpi	r24, 0x03	; 3
+ 330:	09 f4       	brne	.+2      	; 0x334 <MPU6050_set_clockSource+0x1a>
+ 332:	45 c0       	rjmp	.+138    	; 0x3be <MPU6050_set_clockSource+0xa4>
+ 334:	5b c0       	rjmp	.+182    	; 0x3ec <MPU6050_set_clockSource+0xd2>
+		case 0:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 336:	21 e0       	ldi	r18, 0x01	; 1
+ 338:	30 e0       	ldi	r19, 0x00	; 0
+ 33a:	ae 01       	movw	r20, r28
+ 33c:	4f 5f       	subi	r20, 0xFF	; 255
+ 33e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 340:	6b e6       	ldi	r22, 0x6B	; 107
+ 342:	80 ed       	ldi	r24, 0xD0	; 208
+ 344:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			power_reg_write = power_reg_read & ~(0b00000111);
+ 348:	89 81       	ldd	r24, Y+1	; 0x01
+ 34a:	88 7f       	andi	r24, 0xF8	; 248
+ 34c:	8a 83       	std	Y+2, r24	; 0x02
+			power_reg_write |= (0b00000000);
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);;
+ 34e:	21 e0       	ldi	r18, 0x01	; 1
+ 350:	30 e0       	ldi	r19, 0x00	; 0
+ 352:	ae 01       	movw	r20, r28
+ 354:	4e 5f       	subi	r20, 0xFE	; 254
+ 356:	5f 4f       	sbci	r21, 0xFF	; 255
+ 358:	6b e6       	ldi	r22, 0x6B	; 107
+ 35a:	80 ed       	ldi	r24, 0xD0	; 208
+ 35c:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 360:	5b c0       	rjmp	.+182    	; 0x418 <MPU6050_set_clockSource+0xfe>
+		case 1:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 362:	21 e0       	ldi	r18, 0x01	; 1
+ 364:	30 e0       	ldi	r19, 0x00	; 0
+ 366:	ae 01       	movw	r20, r28
+ 368:	4f 5f       	subi	r20, 0xFF	; 255
+ 36a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 36c:	6b e6       	ldi	r22, 0x6B	; 107
+ 36e:	80 ed       	ldi	r24, 0xD0	; 208
+ 370:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			power_reg_write = power_reg_read & ~(0b00000111);
+ 374:	89 81       	ldd	r24, Y+1	; 0x01
+ 376:	88 7f       	andi	r24, 0xF8	; 248
+			power_reg_write |= (0b00000001);
+ 378:	81 60       	ori	r24, 0x01	; 1
+ 37a:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 37c:	21 e0       	ldi	r18, 0x01	; 1
+ 37e:	30 e0       	ldi	r19, 0x00	; 0
+ 380:	ae 01       	movw	r20, r28
+ 382:	4e 5f       	subi	r20, 0xFE	; 254
+ 384:	5f 4f       	sbci	r21, 0xFF	; 255
+ 386:	6b e6       	ldi	r22, 0x6B	; 107
+ 388:	80 ed       	ldi	r24, 0xD0	; 208
+ 38a:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 38e:	44 c0       	rjmp	.+136    	; 0x418 <MPU6050_set_clockSource+0xfe>
+		case 2:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 390:	21 e0       	ldi	r18, 0x01	; 1
+ 392:	30 e0       	ldi	r19, 0x00	; 0
+ 394:	ae 01       	movw	r20, r28
+ 396:	4f 5f       	subi	r20, 0xFF	; 255
+ 398:	5f 4f       	sbci	r21, 0xFF	; 255
+ 39a:	6b e6       	ldi	r22, 0x6B	; 107
+ 39c:	80 ed       	ldi	r24, 0xD0	; 208
+ 39e:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			power_reg_write = power_reg_read & ~(0b00000111);
+ 3a2:	89 81       	ldd	r24, Y+1	; 0x01
+ 3a4:	88 7f       	andi	r24, 0xF8	; 248
+			power_reg_write |= (0b00000010);
+ 3a6:	82 60       	ori	r24, 0x02	; 2
+ 3a8:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 3aa:	21 e0       	ldi	r18, 0x01	; 1
+ 3ac:	30 e0       	ldi	r19, 0x00	; 0
+ 3ae:	ae 01       	movw	r20, r28
+ 3b0:	4e 5f       	subi	r20, 0xFE	; 254
+ 3b2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3b4:	6b e6       	ldi	r22, 0x6B	; 107
+ 3b6:	80 ed       	ldi	r24, 0xD0	; 208
+ 3b8:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 3bc:	2d c0       	rjmp	.+90     	; 0x418 <MPU6050_set_clockSource+0xfe>
+		case 3:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 3be:	21 e0       	ldi	r18, 0x01	; 1
+ 3c0:	30 e0       	ldi	r19, 0x00	; 0
+ 3c2:	ae 01       	movw	r20, r28
+ 3c4:	4f 5f       	subi	r20, 0xFF	; 255
+ 3c6:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3c8:	6b e6       	ldi	r22, 0x6B	; 107
+ 3ca:	80 ed       	ldi	r24, 0xD0	; 208
+ 3cc:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			power_reg_write = power_reg_read & ~(0b00000111);
+ 3d0:	89 81       	ldd	r24, Y+1	; 0x01
+ 3d2:	88 7f       	andi	r24, 0xF8	; 248
+			power_reg_write |= (0b00000011);
+ 3d4:	83 60       	ori	r24, 0x03	; 3
+ 3d6:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 3d8:	21 e0       	ldi	r18, 0x01	; 1
+ 3da:	30 e0       	ldi	r19, 0x00	; 0
+ 3dc:	ae 01       	movw	r20, r28
+ 3de:	4e 5f       	subi	r20, 0xFE	; 254
+ 3e0:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3e2:	6b e6       	ldi	r22, 0x6B	; 107
+ 3e4:	80 ed       	ldi	r24, 0xD0	; 208
+ 3e6:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+ 3ea:	16 c0       	rjmp	.+44     	; 0x418 <MPU6050_set_clockSource+0xfe>
+		default:
+			i2c_readReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_read, 1);
+ 3ec:	21 e0       	ldi	r18, 0x01	; 1
+ 3ee:	30 e0       	ldi	r19, 0x00	; 0
+ 3f0:	ae 01       	movw	r20, r28
+ 3f2:	4f 5f       	subi	r20, 0xFF	; 255
+ 3f4:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3f6:	6b e6       	ldi	r22, 0x6B	; 107
+ 3f8:	80 ed       	ldi	r24, 0xD0	; 208
+ 3fa:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <i2c_readReg>
+			power_reg_write = power_reg_read & ~(0b00000111);
+ 3fe:	89 81       	ldd	r24, Y+1	; 0x01
+ 400:	88 7f       	andi	r24, 0xF8	; 248
+			power_reg_write |= (0b00000001);
+ 402:	81 60       	ori	r24, 0x01	; 1
+ 404:	8a 83       	std	Y+2, r24	; 0x02
+			i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_PWR_MGMT_1, &power_reg_write, 1);
+ 406:	21 e0       	ldi	r18, 0x01	; 1
+ 408:	30 e0       	ldi	r19, 0x00	; 0
+ 40a:	ae 01       	movw	r20, r28
+ 40c:	4e 5f       	subi	r20, 0xFE	; 254
+ 40e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 410:	6b e6       	ldi	r22, 0x6B	; 107
+ 412:	80 ed       	ldi	r24, 0xD0	; 208
+ 414:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+			break;
+	}
+}
+ 418:	0f 90       	pop	r0
+ 41a:	0f 90       	pop	r0
+ 41c:	df 91       	pop	r29
+ 41e:	cf 91       	pop	r28
+ 420:	08 95       	ret
+
+00000422 <MPU6050_init>:
+#include "USART.h"
+#include <stdlib.h>
+
+void MPU6050_init()
+{
+	i2c_init();
+ 422:	0e 94 55 03 	call	0x6aa	; 0x6aa <i2c_init>
+	MPU6050_set_clockSource(1);
+ 426:	81 e0       	ldi	r24, 0x01	; 1
+ 428:	0e 94 8d 01 	call	0x31a	; 0x31a <MPU6050_set_clockSource>
+	MPU6050_set_gyroFS(2);
+ 42c:	82 e0       	ldi	r24, 0x02	; 2
+ 42e:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <MPU6050_set_gyroFS>
+	MPU6050_set_accelFS(0);
+ 432:	80 e0       	ldi	r24, 0x00	; 0
+ 434:	0e 94 0b 01 	call	0x216	; 0x216 <MPU6050_set_accelFS>
+	MPU6050_set_sleepMode(0);
+ 438:	80 e0       	ldi	r24, 0x00	; 0
+ 43a:	0e 94 9a 00 	call	0x134	; 0x134 <MPU6050_set_sleepMode>
+ 43e:	08 95       	ret
+
+00000440 <MPU6050_set_gyro_bias_reg>:
+	
+	i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_XA_OFFS_H, &data[0], 6);
+}
+
+void MPU6050_set_gyro_bias_reg(long *gyro_bias)
+{
+ 440:	cf 92       	push	r12
+ 442:	df 92       	push	r13
+ 444:	ef 92       	push	r14
+ 446:	ff 92       	push	r15
+ 448:	0f 93       	push	r16
+ 44a:	1f 93       	push	r17
+ 44c:	cf 93       	push	r28
+ 44e:	df 93       	push	r29
+ 450:	00 d0       	rcall	.+0      	; 0x452 <MPU6050_set_gyro_bias_reg+0x12>
+ 452:	00 d0       	rcall	.+0      	; 0x454 <MPU6050_set_gyro_bias_reg+0x14>
+ 454:	00 d0       	rcall	.+0      	; 0x456 <MPU6050_set_gyro_bias_reg+0x16>
+ 456:	cd b7       	in	r28, 0x3d	; 61
+ 458:	de b7       	in	r29, 0x3e	; 62
+ 45a:	fc 01       	movw	r30, r24
+	unsigned char data[6] = {0, 0, 0, 0, 0, 0};
+ 45c:	ae 01       	movw	r20, r28
+ 45e:	4f 5f       	subi	r20, 0xFF	; 255
+ 460:	5f 4f       	sbci	r21, 0xFF	; 255
+ 462:	86 e0       	ldi	r24, 0x06	; 6
+ 464:	da 01       	movw	r26, r20
+ 466:	1d 92       	st	X+, r1
+ 468:	8a 95       	dec	r24
+ 46a:	e9 f7       	brne	.-6      	; 0x466 <MPU6050_set_gyro_bias_reg+0x26>
+	int i=0;
+	for(i=0;i<3;i++) {
+		gyro_bias[i]= (-gyro_bias[i]);
+ 46c:	c0 80       	ld	r12, Z
+ 46e:	d1 80       	ldd	r13, Z+1	; 0x01
+ 470:	e2 80       	ldd	r14, Z+2	; 0x02
+ 472:	f3 80       	ldd	r15, Z+3	; 0x03
+ 474:	f0 94       	com	r15
+ 476:	e0 94       	com	r14
+ 478:	d0 94       	com	r13
+ 47a:	c0 94       	com	r12
+ 47c:	c1 1c       	adc	r12, r1
+ 47e:	d1 1c       	adc	r13, r1
+ 480:	e1 1c       	adc	r14, r1
+ 482:	f1 1c       	adc	r15, r1
+ 484:	c0 82       	st	Z, r12
+ 486:	d1 82       	std	Z+1, r13	; 0x01
+ 488:	e2 82       	std	Z+2, r14	; 0x02
+ 48a:	f3 82       	std	Z+3, r15	; 0x03
+ 48c:	04 81       	ldd	r16, Z+4	; 0x04
+ 48e:	15 81       	ldd	r17, Z+5	; 0x05
+ 490:	26 81       	ldd	r18, Z+6	; 0x06
+ 492:	37 81       	ldd	r19, Z+7	; 0x07
+ 494:	30 95       	com	r19
+ 496:	20 95       	com	r18
+ 498:	10 95       	com	r17
+ 49a:	01 95       	neg	r16
+ 49c:	1f 4f       	sbci	r17, 0xFF	; 255
+ 49e:	2f 4f       	sbci	r18, 0xFF	; 255
+ 4a0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4a2:	04 83       	std	Z+4, r16	; 0x04
+ 4a4:	15 83       	std	Z+5, r17	; 0x05
+ 4a6:	26 83       	std	Z+6, r18	; 0x06
+ 4a8:	37 83       	std	Z+7, r19	; 0x07
+ 4aa:	80 85       	ldd	r24, Z+8	; 0x08
+ 4ac:	91 85       	ldd	r25, Z+9	; 0x09
+ 4ae:	a2 85       	ldd	r26, Z+10	; 0x0a
+ 4b0:	b3 85       	ldd	r27, Z+11	; 0x0b
+ 4b2:	b0 95       	com	r27
+ 4b4:	a0 95       	com	r26
+ 4b6:	90 95       	com	r25
+ 4b8:	81 95       	neg	r24
+ 4ba:	9f 4f       	sbci	r25, 0xFF	; 255
+ 4bc:	af 4f       	sbci	r26, 0xFF	; 255
+ 4be:	bf 4f       	sbci	r27, 0xFF	; 255
+ 4c0:	80 87       	std	Z+8, r24	; 0x08
+ 4c2:	91 87       	std	Z+9, r25	; 0x09
+ 4c4:	a2 87       	std	Z+10, r26	; 0x0a
+ 4c6:	b3 87       	std	Z+11, r27	; 0x0b
+	}
+	data[0] = (gyro_bias[0] >> 8) & 0xff;
+ 4c8:	d9 82       	std	Y+1, r13	; 0x01
+	data[1] = (gyro_bias[0]) & 0xff;
+ 4ca:	ca 82       	std	Y+2, r12	; 0x02
+	data[2] = (gyro_bias[1] >> 8) & 0xff;
+ 4cc:	1b 83       	std	Y+3, r17	; 0x03
+	data[3] = (gyro_bias[1]) & 0xff;
+ 4ce:	0c 83       	std	Y+4, r16	; 0x04
+	data[4] = (gyro_bias[2] >> 8) & 0xff;
+ 4d0:	9d 83       	std	Y+5, r25	; 0x05
+	data[5] = (gyro_bias[2]) & 0xff;
+ 4d2:	8e 83       	std	Y+6, r24	; 0x06
+	
+	i2c_writeReg(MPU6050_ADDRESS, MPU6050_RA_XG_OFFS_USRH, &data[0], 6);
+ 4d4:	26 e0       	ldi	r18, 0x06	; 6
+ 4d6:	30 e0       	ldi	r19, 0x00	; 0
+ 4d8:	63 e1       	ldi	r22, 0x13	; 19
+ 4da:	80 ed       	ldi	r24, 0xD0	; 208
+ 4dc:	0e 94 a6 03 	call	0x74c	; 0x74c <i2c_writeReg>
+}
+ 4e0:	26 96       	adiw	r28, 0x06	; 6
+ 4e2:	0f b6       	in	r0, 0x3f	; 63
+ 4e4:	f8 94       	cli
+ 4e6:	de bf       	out	0x3e, r29	; 62
+ 4e8:	0f be       	out	0x3f, r0	; 63
+ 4ea:	cd bf       	out	0x3d, r28	; 61
+ 4ec:	df 91       	pop	r29
+ 4ee:	cf 91       	pop	r28
+ 4f0:	1f 91       	pop	r17
+ 4f2:	0f 91       	pop	r16
+ 4f4:	ff 90       	pop	r15
+ 4f6:	ef 90       	pop	r14
+ 4f8:	df 90       	pop	r13
+ 4fa:	cf 90       	pop	r12
+ 4fc:	08 95       	ret
+
+000004fe <MPU6050_auto_set_gyro_bias>:
+	printString(gyrX_str); printString("_");
+	printString(gyrY_str); printString("_");
+	printLine(gyrZ_str);
+}
+
+void MPU6050_auto_set_gyro_bias() {
+ 4fe:	ef 92       	push	r14
+ 500:	ff 92       	push	r15
+ 502:	0f 93       	push	r16
+ 504:	1f 93       	push	r17
+ 506:	cf 93       	push	r28
+ 508:	df 93       	push	r29
+ 50a:	cd b7       	in	r28, 0x3d	; 61
+ 50c:	de b7       	in	r29, 0x3e	; 62
+ 50e:	c2 54       	subi	r28, 0x42	; 66
+ 510:	d1 09       	sbc	r29, r1
+ 512:	0f b6       	in	r0, 0x3f	; 63
+ 514:	f8 94       	cli
+ 516:	de bf       	out	0x3e, r29	; 62
+ 518:	0f be       	out	0x3f, r0	; 63
+ 51a:	cd bf       	out	0x3d, r28	; 61
+	int16_t gyro[3];
+	long gy_bias[] = {0, 0, 0};
+ 51c:	1f 82       	std	Y+7, r1	; 0x07
+ 51e:	18 86       	std	Y+8, r1	; 0x08
+ 520:	19 86       	std	Y+9, r1	; 0x09
+ 522:	1a 86       	std	Y+10, r1	; 0x0a
+ 524:	1b 86       	std	Y+11, r1	; 0x0b
+ 526:	1c 86       	std	Y+12, r1	; 0x0c
+ 528:	1d 86       	std	Y+13, r1	; 0x0d
+ 52a:	1e 86       	std	Y+14, r1	; 0x0e
+ 52c:	1f 86       	std	Y+15, r1	; 0x0f
+ 52e:	18 8a       	std	Y+16, r1	; 0x10
+ 530:	19 8a       	std	Y+17, r1	; 0x11
+ 532:	1a 8a       	std	Y+18, r1	; 0x12
+	MPU6050_set_gyro_bias_reg(gy_bias);
+ 534:	ce 01       	movw	r24, r28
+ 536:	07 96       	adiw	r24, 0x07	; 7
+ 538:	0e 94 20 02 	call	0x440	; 0x440 <MPU6050_set_gyro_bias_reg>
+	MPU6050_set_gyroFS(2); // set to +-1000dps range
+ 53c:	82 e0       	ldi	r24, 0x02	; 2
+ 53e:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <MPU6050_set_gyroFS>
+ 542:	e1 2c       	mov	r14, r1
+ 544:	68 94       	set
+ 546:	ff 24       	eor	r15, r15
+ 548:	f2 f8       	bld	r15, 2
+ 54a:	8e 01       	movw	r16, r28
+ 54c:	0d 5e       	subi	r16, 0xED	; 237
+ 54e:	1f 4f       	sbci	r17, 0xFF	; 255
+	
+	for (uint16_t i = 0; i < 1024; i++) {
+		MPU6050_get_gyro(gyro);
+ 550:	ce 01       	movw	r24, r28
+ 552:	01 96       	adiw	r24, 0x01	; 1
+ 554:	0e 94 63 00 	call	0xc6	; 0xc6 <MPU6050_get_gyro>
+ 558:	9e 01       	movw	r18, r28
+ 55a:	2f 5f       	subi	r18, 0xFF	; 255
+ 55c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 55e:	fe 01       	movw	r30, r28
+ 560:	37 96       	adiw	r30, 0x07	; 7
+		for (uint8_t j = 0; j < 3; j++) {
+			gy_bias[j] += gyro[j];
+ 562:	d9 01       	movw	r26, r18
+ 564:	8d 91       	ld	r24, X+
+ 566:	9d 91       	ld	r25, X+
+ 568:	9d 01       	movw	r18, r26
+ 56a:	09 2e       	mov	r0, r25
+ 56c:	00 0c       	add	r0, r0
+ 56e:	aa 0b       	sbc	r26, r26
+ 570:	bb 0b       	sbc	r27, r27
+ 572:	40 81       	ld	r20, Z
+ 574:	51 81       	ldd	r21, Z+1	; 0x01
+ 576:	62 81       	ldd	r22, Z+2	; 0x02
+ 578:	73 81       	ldd	r23, Z+3	; 0x03
+ 57a:	84 0f       	add	r24, r20
+ 57c:	95 1f       	adc	r25, r21
+ 57e:	a6 1f       	adc	r26, r22
+ 580:	b7 1f       	adc	r27, r23
+ 582:	81 93       	st	Z+, r24
+ 584:	91 93       	st	Z+, r25
+ 586:	a1 93       	st	Z+, r26
+ 588:	b1 93       	st	Z+, r27
+	MPU6050_set_gyro_bias_reg(gy_bias);
+	MPU6050_set_gyroFS(2); // set to +-1000dps range
+	
+	for (uint16_t i = 0; i < 1024; i++) {
+		MPU6050_get_gyro(gyro);
+		for (uint8_t j = 0; j < 3; j++) {
+ 58a:	e0 17       	cp	r30, r16
+ 58c:	f1 07       	cpc	r31, r17
+ 58e:	49 f7       	brne	.-46     	; 0x562 <MPU6050_auto_set_gyro_bias+0x64>
+ 590:	b1 e0       	ldi	r27, 0x01	; 1
+ 592:	eb 1a       	sub	r14, r27
+ 594:	f1 08       	sbc	r15, r1
+	int16_t gyro[3];
+	long gy_bias[] = {0, 0, 0};
+	MPU6050_set_gyro_bias_reg(gy_bias);
+	MPU6050_set_gyroFS(2); // set to +-1000dps range
+	
+	for (uint16_t i = 0; i < 1024; i++) {
+ 596:	e1 f6       	brne	.-72     	; 0x550 <MPU6050_auto_set_gyro_bias+0x52>
+			gy_bias[j] += gyro[j];
+		}
+	}
+	
+	for (uint8_t k = 0; k < 3; k++) {
+		gy_bias[k] = gy_bias[k] / 1024;
+ 598:	8f 81       	ldd	r24, Y+7	; 0x07
+ 59a:	98 85       	ldd	r25, Y+8	; 0x08
+ 59c:	a9 85       	ldd	r26, Y+9	; 0x09
+ 59e:	ba 85       	ldd	r27, Y+10	; 0x0a
+ 5a0:	bb 23       	and	r27, r27
+ 5a2:	24 f4       	brge	.+8      	; 0x5ac <MPU6050_auto_set_gyro_bias+0xae>
+ 5a4:	81 50       	subi	r24, 0x01	; 1
+ 5a6:	9c 4f       	sbci	r25, 0xFC	; 252
+ 5a8:	af 4f       	sbci	r26, 0xFF	; 255
+ 5aa:	bf 4f       	sbci	r27, 0xFF	; 255
+ 5ac:	07 2e       	mov	r0, r23
+ 5ae:	7a e0       	ldi	r23, 0x0A	; 10
+ 5b0:	b5 95       	asr	r27
+ 5b2:	a7 95       	ror	r26
+ 5b4:	97 95       	ror	r25
+ 5b6:	87 95       	ror	r24
+ 5b8:	7a 95       	dec	r23
+ 5ba:	d1 f7       	brne	.-12     	; 0x5b0 <MPU6050_auto_set_gyro_bias+0xb2>
+ 5bc:	70 2d       	mov	r23, r0
+ 5be:	8f 83       	std	Y+7, r24	; 0x07
+ 5c0:	98 87       	std	Y+8, r25	; 0x08
+ 5c2:	a9 87       	std	Y+9, r26	; 0x09
+ 5c4:	ba 87       	std	Y+10, r27	; 0x0a
+ 5c6:	8b 85       	ldd	r24, Y+11	; 0x0b
+ 5c8:	9c 85       	ldd	r25, Y+12	; 0x0c
+ 5ca:	ad 85       	ldd	r26, Y+13	; 0x0d
+ 5cc:	be 85       	ldd	r27, Y+14	; 0x0e
+ 5ce:	bb 23       	and	r27, r27
+ 5d0:	24 f4       	brge	.+8      	; 0x5da <MPU6050_auto_set_gyro_bias+0xdc>
+ 5d2:	81 50       	subi	r24, 0x01	; 1
+ 5d4:	9c 4f       	sbci	r25, 0xFC	; 252
+ 5d6:	af 4f       	sbci	r26, 0xFF	; 255
+ 5d8:	bf 4f       	sbci	r27, 0xFF	; 255
+ 5da:	07 2e       	mov	r0, r23
+ 5dc:	7a e0       	ldi	r23, 0x0A	; 10
+ 5de:	b5 95       	asr	r27
+ 5e0:	a7 95       	ror	r26
+ 5e2:	97 95       	ror	r25
+ 5e4:	87 95       	ror	r24
+ 5e6:	7a 95       	dec	r23
+ 5e8:	d1 f7       	brne	.-12     	; 0x5de <MPU6050_auto_set_gyro_bias+0xe0>
+ 5ea:	70 2d       	mov	r23, r0
+ 5ec:	8b 87       	std	Y+11, r24	; 0x0b
+ 5ee:	9c 87       	std	Y+12, r25	; 0x0c
+ 5f0:	ad 87       	std	Y+13, r26	; 0x0d
+ 5f2:	be 87       	std	Y+14, r27	; 0x0e
+ 5f4:	8f 85       	ldd	r24, Y+15	; 0x0f
+ 5f6:	98 89       	ldd	r25, Y+16	; 0x10
+ 5f8:	a9 89       	ldd	r26, Y+17	; 0x11
+ 5fa:	ba 89       	ldd	r27, Y+18	; 0x12
+ 5fc:	bb 23       	and	r27, r27
+ 5fe:	24 f4       	brge	.+8      	; 0x608 <MPU6050_auto_set_gyro_bias+0x10a>
+ 600:	81 50       	subi	r24, 0x01	; 1
+ 602:	9c 4f       	sbci	r25, 0xFC	; 252
+ 604:	af 4f       	sbci	r26, 0xFF	; 255
+ 606:	bf 4f       	sbci	r27, 0xFF	; 255
+ 608:	07 2e       	mov	r0, r23
+ 60a:	7a e0       	ldi	r23, 0x0A	; 10
+ 60c:	b5 95       	asr	r27
+ 60e:	a7 95       	ror	r26
+ 610:	97 95       	ror	r25
+ 612:	87 95       	ror	r24
+ 614:	7a 95       	dec	r23
+ 616:	d1 f7       	brne	.-12     	; 0x60c <MPU6050_auto_set_gyro_bias+0x10e>
+ 618:	70 2d       	mov	r23, r0
+ 61a:	8f 87       	std	Y+15, r24	; 0x0f
+ 61c:	98 8b       	std	Y+16, r25	; 0x10
+ 61e:	a9 8b       	std	Y+17, r26	; 0x11
+ 620:	ba 8b       	std	Y+18, r27	; 0x12
+    } else if (__radix < 2 || __radix > 36) {
+	*__s = 0;
+	return __s;
+    } else {
+	extern char *__ltoa_ncheck (long, char *, unsigned char);
+	return __ltoa_ncheck (__val, __s, __radix);
+ 622:	6f 81       	ldd	r22, Y+7	; 0x07
+ 624:	78 85       	ldd	r23, Y+8	; 0x08
+ 626:	89 85       	ldd	r24, Y+9	; 0x09
+ 628:	9a 85       	ldd	r25, Y+10	; 0x0a
+ 62a:	2a e0       	ldi	r18, 0x0A	; 10
+ 62c:	ae 01       	movw	r20, r28
+ 62e:	4d 5e       	subi	r20, 0xED	; 237
+ 630:	5f 4f       	sbci	r21, 0xFF	; 255
+ 632:	0e 94 0e 05 	call	0xa1c	; 0xa1c <__ltoa_ncheck>
+ 636:	6b 85       	ldd	r22, Y+11	; 0x0b
+ 638:	7c 85       	ldd	r23, Y+12	; 0x0c
+ 63a:	8d 85       	ldd	r24, Y+13	; 0x0d
+ 63c:	9e 85       	ldd	r25, Y+14	; 0x0e
+ 63e:	2a e0       	ldi	r18, 0x0A	; 10
+ 640:	ae 01       	movw	r20, r28
+ 642:	4d 5d       	subi	r20, 0xDD	; 221
+ 644:	5f 4f       	sbci	r21, 0xFF	; 255
+ 646:	0e 94 0e 05 	call	0xa1c	; 0xa1c <__ltoa_ncheck>
+ 64a:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 64c:	78 89       	ldd	r23, Y+16	; 0x10
+ 64e:	89 89       	ldd	r24, Y+17	; 0x11
+ 650:	9a 89       	ldd	r25, Y+18	; 0x12
+ 652:	2a e0       	ldi	r18, 0x0A	; 10
+ 654:	ae 01       	movw	r20, r28
+ 656:	4d 5c       	subi	r20, 0xCD	; 205
+ 658:	5f 4f       	sbci	r21, 0xFF	; 255
+ 65a:	0e 94 0e 05 	call	0xa1c	; 0xa1c <__ltoa_ncheck>
+	
+	char gyrX_str[16], gyrY_str[16], gyrZ_str[16];
+	ltoa(gy_bias[0],gyrX_str,10);
+	ltoa(gy_bias[1],gyrY_str,10);
+	ltoa(gy_bias[2],gyrZ_str,10);
+	printString(gyrX_str); printString("_");
+ 65e:	ce 01       	movw	r24, r28
+ 660:	43 96       	adiw	r24, 0x13	; 19
+ 662:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+ 666:	80 e0       	ldi	r24, 0x00	; 0
+ 668:	91 e0       	ldi	r25, 0x01	; 1
+ 66a:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+	printString(gyrY_str); printString("_");
+ 66e:	ce 01       	movw	r24, r28
+ 670:	83 96       	adiw	r24, 0x23	; 35
+ 672:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+ 676:	80 e0       	ldi	r24, 0x00	; 0
+ 678:	91 e0       	ldi	r25, 0x01	; 1
+ 67a:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+	printLine(gyrZ_str);
+ 67e:	ce 01       	movw	r24, r28
+ 680:	c3 96       	adiw	r24, 0x33	; 51
+ 682:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+	
+	MPU6050_set_gyro_bias_reg(gy_bias);
+ 686:	ce 01       	movw	r24, r28
+ 688:	07 96       	adiw	r24, 0x07	; 7
+ 68a:	0e 94 20 02 	call	0x440	; 0x440 <MPU6050_set_gyro_bias_reg>
+ 68e:	ce 5b       	subi	r28, 0xBE	; 190
+ 690:	df 4f       	sbci	r29, 0xFF	; 255
+ 692:	0f b6       	in	r0, 0x3f	; 63
+ 694:	f8 94       	cli
+ 696:	de bf       	out	0x3e, r29	; 62
+ 698:	0f be       	out	0x3f, r0	; 63
+ 69a:	cd bf       	out	0x3d, r28	; 61
+ 69c:	df 91       	pop	r29
+ 69e:	cf 91       	pop	r28
+ 6a0:	1f 91       	pop	r17
+ 6a2:	0f 91       	pop	r16
+ 6a4:	ff 90       	pop	r15
+ 6a6:	ef 90       	pop	r14
+ 6a8:	08 95       	ret
+
+000006aa <i2c_init>:
+ 6aa:	88 e4       	ldi	r24, 0x48	; 72
+ 6ac:	80 93 b8 00 	sts	0x00B8, r24
+ 6b0:	08 95       	ret
+
+000006b2 <i2c_start>:
+ 6b2:	ec eb       	ldi	r30, 0xBC	; 188
+ 6b4:	f0 e0       	ldi	r31, 0x00	; 0
+ 6b6:	10 82       	st	Z, r1
+ 6b8:	94 ea       	ldi	r25, 0xA4	; 164
+ 6ba:	90 83       	st	Z, r25
+ 6bc:	90 81       	ld	r25, Z
+ 6be:	99 23       	and	r25, r25
+ 6c0:	ec f7       	brge	.-6      	; 0x6bc <i2c_start+0xa>
+ 6c2:	90 91 b9 00 	lds	r25, 0x00B9
+ 6c6:	98 7f       	andi	r25, 0xF8	; 248
+ 6c8:	98 30       	cpi	r25, 0x08	; 8
+ 6ca:	a1 f4       	brne	.+40     	; 0x6f4 <i2c_start+0x42>
+ 6cc:	80 93 bb 00 	sts	0x00BB, r24
+ 6d0:	84 e8       	ldi	r24, 0x84	; 132
+ 6d2:	80 93 bc 00 	sts	0x00BC, r24
+ 6d6:	ec eb       	ldi	r30, 0xBC	; 188
+ 6d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 6da:	80 81       	ld	r24, Z
+ 6dc:	88 23       	and	r24, r24
+ 6de:	ec f7       	brge	.-6      	; 0x6da <i2c_start+0x28>
+ 6e0:	90 91 b9 00 	lds	r25, 0x00B9
+ 6e4:	98 7f       	andi	r25, 0xF8	; 248
+ 6e6:	98 31       	cpi	r25, 0x18	; 24
+ 6e8:	39 f0       	breq	.+14     	; 0x6f8 <i2c_start+0x46>
+ 6ea:	81 e0       	ldi	r24, 0x01	; 1
+ 6ec:	90 34       	cpi	r25, 0x40	; 64
+ 6ee:	29 f4       	brne	.+10     	; 0x6fa <i2c_start+0x48>
+ 6f0:	80 e0       	ldi	r24, 0x00	; 0
+ 6f2:	08 95       	ret
+ 6f4:	81 e0       	ldi	r24, 0x01	; 1
+ 6f6:	08 95       	ret
+ 6f8:	80 e0       	ldi	r24, 0x00	; 0
+ 6fa:	08 95       	ret
+
+000006fc <i2c_write>:
+ 6fc:	80 93 bb 00 	sts	0x00BB, r24
+ 700:	84 e8       	ldi	r24, 0x84	; 132
+ 702:	80 93 bc 00 	sts	0x00BC, r24
+ 706:	ec eb       	ldi	r30, 0xBC	; 188
+ 708:	f0 e0       	ldi	r31, 0x00	; 0
+ 70a:	80 81       	ld	r24, Z
+ 70c:	88 23       	and	r24, r24
+ 70e:	ec f7       	brge	.-6      	; 0x70a <i2c_write+0xe>
+ 710:	90 91 b9 00 	lds	r25, 0x00B9
+ 714:	98 7f       	andi	r25, 0xF8	; 248
+ 716:	81 e0       	ldi	r24, 0x01	; 1
+ 718:	98 32       	cpi	r25, 0x28	; 40
+ 71a:	09 f4       	brne	.+2      	; 0x71e <i2c_write+0x22>
+ 71c:	80 e0       	ldi	r24, 0x00	; 0
+ 71e:	08 95       	ret
+
+00000720 <i2c_read_ack>:
+ 720:	84 ec       	ldi	r24, 0xC4	; 196
+ 722:	80 93 bc 00 	sts	0x00BC, r24
+ 726:	ec eb       	ldi	r30, 0xBC	; 188
+ 728:	f0 e0       	ldi	r31, 0x00	; 0
+ 72a:	80 81       	ld	r24, Z
+ 72c:	88 23       	and	r24, r24
+ 72e:	ec f7       	brge	.-6      	; 0x72a <i2c_read_ack+0xa>
+ 730:	80 91 bb 00 	lds	r24, 0x00BB
+ 734:	08 95       	ret
+
+00000736 <i2c_read_nack>:
+ 736:	84 e8       	ldi	r24, 0x84	; 132
+ 738:	80 93 bc 00 	sts	0x00BC, r24
+ 73c:	ec eb       	ldi	r30, 0xBC	; 188
+ 73e:	f0 e0       	ldi	r31, 0x00	; 0
+ 740:	80 81       	ld	r24, Z
+ 742:	88 23       	and	r24, r24
+ 744:	ec f7       	brge	.-6      	; 0x740 <i2c_read_nack+0xa>
+ 746:	80 91 bb 00 	lds	r24, 0x00BB
+ 74a:	08 95       	ret
+
+0000074c <i2c_writeReg>:
+ 74c:	cf 92       	push	r12
+ 74e:	df 92       	push	r13
+ 750:	ff 92       	push	r15
+ 752:	0f 93       	push	r16
+ 754:	1f 93       	push	r17
+ 756:	cf 93       	push	r28
+ 758:	df 93       	push	r29
+ 75a:	c6 2f       	mov	r28, r22
+ 75c:	6a 01       	movw	r12, r20
+ 75e:	89 01       	movw	r16, r18
+ 760:	0e 94 59 03 	call	0x6b2	; 0x6b2 <i2c_start>
+ 764:	f8 2e       	mov	r15, r24
+ 766:	81 11       	cpse	r24, r1
+ 768:	15 c0       	rjmp	.+42     	; 0x794 <i2c_writeReg+0x48>
+ 76a:	8c 2f       	mov	r24, r28
+ 76c:	0e 94 7e 03 	call	0x6fc	; 0x6fc <i2c_write>
+ 770:	01 15       	cp	r16, r1
+ 772:	11 05       	cpc	r17, r1
+ 774:	59 f0       	breq	.+22     	; 0x78c <i2c_writeReg+0x40>
+ 776:	e6 01       	movw	r28, r12
+ 778:	0c 0d       	add	r16, r12
+ 77a:	1d 1d       	adc	r17, r13
+ 77c:	89 91       	ld	r24, Y+
+ 77e:	0e 94 7e 03 	call	0x6fc	; 0x6fc <i2c_write>
+ 782:	81 11       	cpse	r24, r1
+ 784:	0a c0       	rjmp	.+20     	; 0x79a <i2c_writeReg+0x4e>
+ 786:	c0 17       	cp	r28, r16
+ 788:	d1 07       	cpc	r29, r17
+ 78a:	c1 f7       	brne	.-16     	; 0x77c <i2c_writeReg+0x30>
+ 78c:	84 e9       	ldi	r24, 0x94	; 148
+ 78e:	80 93 bc 00 	sts	0x00BC, r24
+ 792:	05 c0       	rjmp	.+10     	; 0x79e <i2c_writeReg+0x52>
+ 794:	ff 24       	eor	r15, r15
+ 796:	f3 94       	inc	r15
+ 798:	02 c0       	rjmp	.+4      	; 0x79e <i2c_writeReg+0x52>
+ 79a:	ff 24       	eor	r15, r15
+ 79c:	f3 94       	inc	r15
+ 79e:	8f 2d       	mov	r24, r15
+ 7a0:	df 91       	pop	r29
+ 7a2:	cf 91       	pop	r28
+ 7a4:	1f 91       	pop	r17
+ 7a6:	0f 91       	pop	r16
+ 7a8:	ff 90       	pop	r15
+ 7aa:	df 90       	pop	r13
+ 7ac:	cf 90       	pop	r12
+ 7ae:	08 95       	ret
+
+000007b0 <i2c_readReg>:
+ 7b0:	af 92       	push	r10
+ 7b2:	bf 92       	push	r11
+ 7b4:	df 92       	push	r13
+ 7b6:	ef 92       	push	r14
+ 7b8:	ff 92       	push	r15
+ 7ba:	0f 93       	push	r16
+ 7bc:	1f 93       	push	r17
+ 7be:	cf 93       	push	r28
+ 7c0:	df 93       	push	r29
+ 7c2:	18 2f       	mov	r17, r24
+ 7c4:	06 2f       	mov	r16, r22
+ 7c6:	5a 01       	movw	r10, r20
+ 7c8:	e9 01       	movw	r28, r18
+ 7ca:	0e 94 59 03 	call	0x6b2	; 0x6b2 <i2c_start>
+ 7ce:	81 11       	cpse	r24, r1
+ 7d0:	22 c0       	rjmp	.+68     	; 0x816 <i2c_readReg+0x66>
+ 7d2:	80 2f       	mov	r24, r16
+ 7d4:	0e 94 7e 03 	call	0x6fc	; 0x6fc <i2c_write>
+ 7d8:	81 2f       	mov	r24, r17
+ 7da:	81 60       	ori	r24, 0x01	; 1
+ 7dc:	0e 94 59 03 	call	0x6b2	; 0x6b2 <i2c_start>
+ 7e0:	d8 2e       	mov	r13, r24
+ 7e2:	81 11       	cpse	r24, r1
+ 7e4:	1b c0       	rjmp	.+54     	; 0x81c <i2c_readReg+0x6c>
+ 7e6:	8e 01       	movw	r16, r28
+ 7e8:	01 50       	subi	r16, 0x01	; 1
+ 7ea:	11 09       	sbc	r17, r1
+ 7ec:	51 f0       	breq	.+20     	; 0x802 <i2c_readReg+0x52>
+ 7ee:	e5 01       	movw	r28, r10
+ 7f0:	75 01       	movw	r14, r10
+ 7f2:	e0 0e       	add	r14, r16
+ 7f4:	f1 1e       	adc	r15, r17
+ 7f6:	0e 94 90 03 	call	0x720	; 0x720 <i2c_read_ack>
+ 7fa:	89 93       	st	Y+, r24
+ 7fc:	ce 15       	cp	r28, r14
+ 7fe:	df 05       	cpc	r29, r15
+ 800:	d1 f7       	brne	.-12     	; 0x7f6 <i2c_readReg+0x46>
+ 802:	e5 01       	movw	r28, r10
+ 804:	c0 0f       	add	r28, r16
+ 806:	d1 1f       	adc	r29, r17
+ 808:	0e 94 9b 03 	call	0x736	; 0x736 <i2c_read_nack>
+ 80c:	88 83       	st	Y, r24
+ 80e:	84 e9       	ldi	r24, 0x94	; 148
+ 810:	80 93 bc 00 	sts	0x00BC, r24
+ 814:	05 c0       	rjmp	.+10     	; 0x820 <i2c_readReg+0x70>
+ 816:	dd 24       	eor	r13, r13
+ 818:	d3 94       	inc	r13
+ 81a:	02 c0       	rjmp	.+4      	; 0x820 <i2c_readReg+0x70>
+ 81c:	dd 24       	eor	r13, r13
+ 81e:	d3 94       	inc	r13
+ 820:	8d 2d       	mov	r24, r13
+ 822:	df 91       	pop	r29
+ 824:	cf 91       	pop	r28
+ 826:	1f 91       	pop	r17
+ 828:	0f 91       	pop	r16
+ 82a:	ff 90       	pop	r15
+ 82c:	ef 90       	pop	r14
+ 82e:	df 90       	pop	r13
+ 830:	bf 90       	pop	r11
+ 832:	af 90       	pop	r10
+ 834:	08 95       	ret
+
+00000836 <statusLED>:
+    }
+}
+
+void statusLED(uint8_t status)
+{
+	if (status) {
+ 836:	88 23       	and	r24, r24
+ 838:	11 f0       	breq	.+4      	; 0x83e <statusLED+0x8>
+		PORTB |= (1<<PORTB5);
+ 83a:	2d 9a       	sbi	0x05, 5	; 5
+ 83c:	08 95       	ret
+	}
+	else {
+		PORTB &= ~(1<<PORTB5);
+ 83e:	2d 98       	cbi	0x05, 5	; 5
+ 840:	08 95       	ret
+
+00000842 <main>:
+#include "i2c_master.h"
+
+void statusLED(uint8_t status);
+
+int main(void)
+{
+ 842:	cf 93       	push	r28
+ 844:	df 93       	push	r29
+ 846:	cd b7       	in	r28, 0x3d	; 61
+ 848:	de b7       	in	r29, 0x3e	; 62
+ 84a:	e6 97       	sbiw	r28, 0x36	; 54
+ 84c:	0f b6       	in	r0, 0x3f	; 63
+ 84e:	f8 94       	cli
+ 850:	de bf       	out	0x3e, r29	; 62
+ 852:	0f be       	out	0x3f, r0	; 63
+ 854:	cd bf       	out	0x3d, r28	; 61
+	uint8_t timing_bit = 0;
+	int16_t gyr[3];
+	char gyrX_str[16], gyrY_str[16], gyrZ_str[16];
+	
+	// set status LED as output
+	DDRB |= (1<<DDB5);
+ 856:	25 9a       	sbi	0x04, 5	; 4
+	
+	initUSART();
+ 858:	0e 94 bb 04 	call	0x976	; 0x976 <initUSART>
+from 1 to 129. Thus, one does not need to use \c clock_div_t type as argument.
+*/
+void clock_prescale_set(clock_div_t __x)
+{
+    uint8_t __tmp = _BV(CLKPCE);
+    __asm__ __volatile__ (
+ 85c:	90 e0       	ldi	r25, 0x00	; 0
+ 85e:	80 e8       	ldi	r24, 0x80	; 128
+ 860:	0f b6       	in	r0, 0x3f	; 63
+ 862:	f8 94       	cli
+ 864:	80 93 61 00 	sts	0x0061, r24
+ 868:	90 93 61 00 	sts	0x0061, r25
+ 86c:	0f be       	out	0x3f, r0	; 63
+	clock_prescale_set(clock_div_1); // set clock to 16MHz
+	MPU6050_init();
+ 86e:	0e 94 11 02 	call	0x422	; 0x422 <MPU6050_init>
+	
+	MPU6050_set_accelFS(3);
+ 872:	83 e0       	ldi	r24, 0x03	; 3
+ 874:	0e 94 0b 01 	call	0x216	; 0x216 <MPU6050_set_accelFS>
+	
+	if (MPU6050_test_I2C()) {
+ 878:	0e 94 4b 00 	call	0x96	; 0x96 <MPU6050_test_I2C>
+ 87c:	88 23       	and	r24, r24
+ 87e:	41 f0       	breq	.+16     	; 0x890 <main+0x4e>
+		printLine("=== IMU working properly ===");
+ 880:	82 e0       	ldi	r24, 0x02	; 2
+ 882:	91 e0       	ldi	r25, 0x01	; 1
+ 884:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+		statusLED(1);
+ 888:	81 e0       	ldi	r24, 0x01	; 1
+ 88a:	0e 94 1b 04 	call	0x836	; 0x836 <statusLED>
+ 88e:	26 c0       	rjmp	.+76     	; 0x8dc <main+0x9a>
+	}
+	else {
+		statusLED(1);
+ 890:	81 e0       	ldi	r24, 0x01	; 1
+ 892:	0e 94 1b 04 	call	0x836	; 0x836 <statusLED>
+		printLine("=== IMU ERROR ===");
+ 896:	8f e1       	ldi	r24, 0x1F	; 31
+ 898:	91 e0       	ldi	r25, 0x01	; 1
+ 89a:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+ 89e:	12 e3       	ldi	r17, 0x32	; 50
+		for(uint8_t i = 0; i < 50; i++){
+			statusLED(0);
+ 8a0:	80 e0       	ldi	r24, 0x00	; 0
+ 8a2:	0e 94 1b 04 	call	0x836	; 0x836 <statusLED>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 8a6:	2f ef       	ldi	r18, 0xFF	; 255
+ 8a8:	80 e7       	ldi	r24, 0x70	; 112
+ 8aa:	92 e0       	ldi	r25, 0x02	; 2
+ 8ac:	21 50       	subi	r18, 0x01	; 1
+ 8ae:	80 40       	sbci	r24, 0x00	; 0
+ 8b0:	90 40       	sbci	r25, 0x00	; 0
+ 8b2:	e1 f7       	brne	.-8      	; 0x8ac <main+0x6a>
+ 8b4:	00 c0       	rjmp	.+0      	; 0x8b6 <main+0x74>
+ 8b6:	00 00       	nop
+			_delay_ms(50);
+			statusLED(1);
+ 8b8:	81 e0       	ldi	r24, 0x01	; 1
+ 8ba:	0e 94 1b 04 	call	0x836	; 0x836 <statusLED>
+ 8be:	2f ef       	ldi	r18, 0xFF	; 255
+ 8c0:	80 e7       	ldi	r24, 0x70	; 112
+ 8c2:	92 e0       	ldi	r25, 0x02	; 2
+ 8c4:	21 50       	subi	r18, 0x01	; 1
+ 8c6:	80 40       	sbci	r24, 0x00	; 0
+ 8c8:	90 40       	sbci	r25, 0x00	; 0
+ 8ca:	e1 f7       	brne	.-8      	; 0x8c4 <main+0x82>
+ 8cc:	00 c0       	rjmp	.+0      	; 0x8ce <main+0x8c>
+ 8ce:	00 00       	nop
+			_delay_ms(50);
+			printString(".");
+ 8d0:	83 e4       	ldi	r24, 0x43	; 67
+ 8d2:	91 e0       	ldi	r25, 0x01	; 1
+ 8d4:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+ 8d8:	11 50       	subi	r17, 0x01	; 1
+		statusLED(1);
+	}
+	else {
+		statusLED(1);
+		printLine("=== IMU ERROR ===");
+		for(uint8_t i = 0; i < 50; i++){
+ 8da:	11 f7       	brne	.-60     	; 0x8a0 <main+0x5e>
+			_delay_ms(50);
+			printString(".");
+		}
+	}
+	
+	printLine("Calibrating Gyro...");
+ 8dc:	81 e3       	ldi	r24, 0x31	; 49
+ 8de:	91 e0       	ldi	r25, 0x01	; 1
+ 8e0:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+	MPU6050_auto_set_gyro_bias();
+ 8e4:	0e 94 7f 02 	call	0x4fe	; 0x4fe <MPU6050_auto_set_gyro_bias>
+	printLine("Calibration OK");
+ 8e8:	85 e4       	ldi	r24, 0x45	; 69
+ 8ea:	91 e0       	ldi	r25, 0x01	; 1
+ 8ec:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+	0 - 250 deg/s, 131 LSB/(deg/s)
+	1 - 500 deg/s, 65.5 LSB/(deg/s)
+	2 - 1000 deg/s, 32.8 LSB/(deg/s)
+	3 - 2000 deg/s, 16.4 LSB/(deg/s)
+	*/
+	MPU6050_set_gyroFS(3);
+ 8f0:	83 e0       	ldi	r24, 0x03	; 3
+ 8f2:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <MPU6050_set_gyroFS>
+
+void statusLED(uint8_t status);
+
+int main(void)
+{
+	uint8_t timing_bit = 0;
+ 8f6:	10 e0       	ldi	r17, 0x00	; 0
+		itoa(gyr[2],gyrZ_str,10);
+		printString(gyrX_str); printString(" ");
+		printString(gyrY_str); printString(" ");
+		printLine(gyrZ_str);
+		_delay_ms(10);
+		timing_bit = !timing_bit;
+ 8f8:	01 e0       	ldi	r16, 0x01	; 1
+ 8fa:	f1 2c       	mov	r15, r1
+	*/
+	MPU6050_set_gyroFS(3);
+
+    while (1) 
+    {
+		MPU6050_get_gyro(gyr);
+ 8fc:	ce 01       	movw	r24, r28
+ 8fe:	01 96       	adiw	r24, 0x01	; 1
+ 900:	0e 94 63 00 	call	0xc6	; 0xc6 <MPU6050_get_gyro>
+    } else if (__radix < 2 || __radix > 36) {
+	*__s = 0;
+	return __s;
+    } else {
+	extern char *__itoa_ncheck (int, char *, unsigned char);
+	return __itoa_ncheck (__val, __s, __radix);
+ 904:	4a e0       	ldi	r20, 0x0A	; 10
+ 906:	be 01       	movw	r22, r28
+ 908:	69 5f       	subi	r22, 0xF9	; 249
+ 90a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 90c:	89 81       	ldd	r24, Y+1	; 0x01
+ 90e:	9a 81       	ldd	r25, Y+2	; 0x02
+ 910:	0e 94 03 05 	call	0xa06	; 0xa06 <__itoa_ncheck>
+ 914:	4a e0       	ldi	r20, 0x0A	; 10
+ 916:	be 01       	movw	r22, r28
+ 918:	69 5e       	subi	r22, 0xE9	; 233
+ 91a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 91c:	8b 81       	ldd	r24, Y+3	; 0x03
+ 91e:	9c 81       	ldd	r25, Y+4	; 0x04
+ 920:	0e 94 03 05 	call	0xa06	; 0xa06 <__itoa_ncheck>
+ 924:	4a e0       	ldi	r20, 0x0A	; 10
+ 926:	be 01       	movw	r22, r28
+ 928:	69 5d       	subi	r22, 0xD9	; 217
+ 92a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 92c:	8d 81       	ldd	r24, Y+5	; 0x05
+ 92e:	9e 81       	ldd	r25, Y+6	; 0x06
+ 930:	0e 94 03 05 	call	0xa06	; 0xa06 <__itoa_ncheck>
+		//MPU6050_get_accel(gyr);
+		itoa(gyr[0],gyrX_str,10);
+		itoa(gyr[1],gyrY_str,10);
+		itoa(gyr[2],gyrZ_str,10);
+		printString(gyrX_str); printString(" ");
+ 934:	ce 01       	movw	r24, r28
+ 936:	07 96       	adiw	r24, 0x07	; 7
+ 938:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+ 93c:	84 e5       	ldi	r24, 0x54	; 84
+ 93e:	91 e0       	ldi	r25, 0x01	; 1
+ 940:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+		printString(gyrY_str); printString(" ");
+ 944:	ce 01       	movw	r24, r28
+ 946:	47 96       	adiw	r24, 0x17	; 23
+ 948:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+ 94c:	84 e5       	ldi	r24, 0x54	; 84
+ 94e:	91 e0       	ldi	r25, 0x01	; 1
+ 950:	0e 94 d4 04 	call	0x9a8	; 0x9a8 <printString>
+		printLine(gyrZ_str);
+ 954:	ce 01       	movw	r24, r28
+ 956:	87 96       	adiw	r24, 0x27	; 39
+ 958:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <printLine>
+ 95c:	8f e3       	ldi	r24, 0x3F	; 63
+ 95e:	9c e9       	ldi	r25, 0x9C	; 156
+ 960:	01 97       	sbiw	r24, 0x01	; 1
+ 962:	f1 f7       	brne	.-4      	; 0x960 <__stack+0x61>
+ 964:	00 c0       	rjmp	.+0      	; 0x966 <__stack+0x67>
+ 966:	00 00       	nop
+		_delay_ms(10);
+		timing_bit = !timing_bit;
+ 968:	80 2f       	mov	r24, r16
+ 96a:	11 11       	cpse	r17, r1
+ 96c:	8f 2d       	mov	r24, r15
+ 96e:	18 2f       	mov	r17, r24
+		statusLED(timing_bit);
+ 970:	0e 94 1b 04 	call	0x836	; 0x836 <statusLED>
+    }
+ 974:	c3 cf       	rjmp	.-122    	; 0x8fc <main+0xba>
+
+00000976 <initUSART>:
+ 976:	10 92 c5 00 	sts	0x00C5, r1
+ 97a:	80 e1       	ldi	r24, 0x10	; 16
+ 97c:	80 93 c4 00 	sts	0x00C4, r24
+ 980:	e0 ec       	ldi	r30, 0xC0	; 192
+ 982:	f0 e0       	ldi	r31, 0x00	; 0
+ 984:	80 81       	ld	r24, Z
+ 986:	82 60       	ori	r24, 0x02	; 2
+ 988:	80 83       	st	Z, r24
+ 98a:	88 e1       	ldi	r24, 0x18	; 24
+ 98c:	80 93 c1 00 	sts	0x00C1, r24
+ 990:	86 e0       	ldi	r24, 0x06	; 6
+ 992:	80 93 c2 00 	sts	0x00C2, r24
+ 996:	08 95       	ret
+
+00000998 <transmitByte>:
+ 998:	e0 ec       	ldi	r30, 0xC0	; 192
+ 99a:	f0 e0       	ldi	r31, 0x00	; 0
+ 99c:	90 81       	ld	r25, Z
+ 99e:	95 ff       	sbrs	r25, 5
+ 9a0:	fd cf       	rjmp	.-6      	; 0x99c <transmitByte+0x4>
+ 9a2:	80 93 c6 00 	sts	0x00C6, r24
+ 9a6:	08 95       	ret
+
+000009a8 <printString>:
+ 9a8:	0f 93       	push	r16
+ 9aa:	1f 93       	push	r17
+ 9ac:	cf 93       	push	r28
+ 9ae:	fc 01       	movw	r30, r24
+ 9b0:	80 81       	ld	r24, Z
+ 9b2:	88 23       	and	r24, r24
+ 9b4:	59 f0       	breq	.+22     	; 0x9cc <printString+0x24>
+ 9b6:	8f 01       	movw	r16, r30
+ 9b8:	c0 e0       	ldi	r28, 0x00	; 0
+ 9ba:	0e 94 cc 04 	call	0x998	; 0x998 <transmitByte>
+ 9be:	cf 5f       	subi	r28, 0xFF	; 255
+ 9c0:	f8 01       	movw	r30, r16
+ 9c2:	ec 0f       	add	r30, r28
+ 9c4:	f1 1d       	adc	r31, r1
+ 9c6:	80 81       	ld	r24, Z
+ 9c8:	81 11       	cpse	r24, r1
+ 9ca:	f7 cf       	rjmp	.-18     	; 0x9ba <printString+0x12>
+ 9cc:	cf 91       	pop	r28
+ 9ce:	1f 91       	pop	r17
+ 9d0:	0f 91       	pop	r16
+ 9d2:	08 95       	ret
+
+000009d4 <printLine>:
+ 9d4:	0f 93       	push	r16
+ 9d6:	1f 93       	push	r17
+ 9d8:	cf 93       	push	r28
+ 9da:	8c 01       	movw	r16, r24
+ 9dc:	fc 01       	movw	r30, r24
+ 9de:	80 81       	ld	r24, Z
+ 9e0:	88 23       	and	r24, r24
+ 9e2:	51 f0       	breq	.+20     	; 0x9f8 <printLine+0x24>
+ 9e4:	c0 e0       	ldi	r28, 0x00	; 0
+ 9e6:	0e 94 cc 04 	call	0x998	; 0x998 <transmitByte>
+ 9ea:	cf 5f       	subi	r28, 0xFF	; 255
+ 9ec:	f8 01       	movw	r30, r16
+ 9ee:	ec 0f       	add	r30, r28
+ 9f0:	f1 1d       	adc	r31, r1
+ 9f2:	80 81       	ld	r24, Z
+ 9f4:	81 11       	cpse	r24, r1
+ 9f6:	f7 cf       	rjmp	.-18     	; 0x9e6 <printLine+0x12>
+ 9f8:	8a e0       	ldi	r24, 0x0A	; 10
+ 9fa:	0e 94 cc 04 	call	0x998	; 0x998 <transmitByte>
+ 9fe:	cf 91       	pop	r28
+ a00:	1f 91       	pop	r17
+ a02:	0f 91       	pop	r16
+ a04:	08 95       	ret
+
+00000a06 <__itoa_ncheck>:
+ a06:	bb 27       	eor	r27, r27
+ a08:	4a 30       	cpi	r20, 0x0A	; 10
+ a0a:	31 f4       	brne	.+12     	; 0xa18 <__itoa_ncheck+0x12>
+ a0c:	99 23       	and	r25, r25
+ a0e:	22 f4       	brpl	.+8      	; 0xa18 <__itoa_ncheck+0x12>
+ a10:	bd e2       	ldi	r27, 0x2D	; 45
+ a12:	90 95       	com	r25
+ a14:	81 95       	neg	r24
+ a16:	9f 4f       	sbci	r25, 0xFF	; 255
+ a18:	0c 94 40 05 	jmp	0xa80	; 0xa80 <__utoa_common>
+
+00000a1c <__ltoa_ncheck>:
+ a1c:	bb 27       	eor	r27, r27
+ a1e:	2a 30       	cpi	r18, 0x0A	; 10
+ a20:	51 f4       	brne	.+20     	; 0xa36 <__ltoa_ncheck+0x1a>
+ a22:	99 23       	and	r25, r25
+ a24:	42 f4       	brpl	.+16     	; 0xa36 <__ltoa_ncheck+0x1a>
+ a26:	bd e2       	ldi	r27, 0x2D	; 45
+ a28:	90 95       	com	r25
+ a2a:	80 95       	com	r24
+ a2c:	70 95       	com	r23
+ a2e:	61 95       	neg	r22
+ a30:	7f 4f       	sbci	r23, 0xFF	; 255
+ a32:	8f 4f       	sbci	r24, 0xFF	; 255
+ a34:	9f 4f       	sbci	r25, 0xFF	; 255
+ a36:	0c 94 1e 05 	jmp	0xa3c	; 0xa3c <__ultoa_common>
+
+00000a3a <__ultoa_ncheck>:
+ a3a:	bb 27       	eor	r27, r27
+
+00000a3c <__ultoa_common>:
+ a3c:	fa 01       	movw	r30, r20
+ a3e:	a6 2f       	mov	r26, r22
+ a40:	62 17       	cp	r22, r18
+ a42:	71 05       	cpc	r23, r1
+ a44:	81 05       	cpc	r24, r1
+ a46:	91 05       	cpc	r25, r1
+ a48:	33 0b       	sbc	r19, r19
+ a4a:	30 fb       	bst	r19, 0
+ a4c:	66 f0       	brts	.+24     	; 0xa66 <__ultoa_common+0x2a>
+ a4e:	aa 27       	eor	r26, r26
+ a50:	66 0f       	add	r22, r22
+ a52:	77 1f       	adc	r23, r23
+ a54:	88 1f       	adc	r24, r24
+ a56:	99 1f       	adc	r25, r25
+ a58:	aa 1f       	adc	r26, r26
+ a5a:	a2 17       	cp	r26, r18
+ a5c:	10 f0       	brcs	.+4      	; 0xa62 <__ultoa_common+0x26>
+ a5e:	a2 1b       	sub	r26, r18
+ a60:	63 95       	inc	r22
+ a62:	38 50       	subi	r19, 0x08	; 8
+ a64:	a9 f7       	brne	.-22     	; 0xa50 <__ultoa_common+0x14>
+ a66:	a0 5d       	subi	r26, 0xD0	; 208
+ a68:	aa 33       	cpi	r26, 0x3A	; 58
+ a6a:	08 f0       	brcs	.+2      	; 0xa6e <__ultoa_common+0x32>
+ a6c:	a9 5d       	subi	r26, 0xD9	; 217
+ a6e:	a1 93       	st	Z+, r26
+ a70:	36 f7       	brtc	.-52     	; 0xa3e <__ultoa_common+0x2>
+ a72:	b1 11       	cpse	r27, r1
+ a74:	b1 93       	st	Z+, r27
+ a76:	10 82       	st	Z, r1
+ a78:	ca 01       	movw	r24, r20
+ a7a:	0c 94 59 05 	jmp	0xab2	; 0xab2 <strrev>
+
+00000a7e <__utoa_ncheck>:
+ a7e:	bb 27       	eor	r27, r27
+
+00000a80 <__utoa_common>:
+ a80:	fb 01       	movw	r30, r22
+ a82:	55 27       	eor	r21, r21
+ a84:	aa 27       	eor	r26, r26
+ a86:	88 0f       	add	r24, r24
+ a88:	99 1f       	adc	r25, r25
+ a8a:	aa 1f       	adc	r26, r26
+ a8c:	a4 17       	cp	r26, r20
+ a8e:	10 f0       	brcs	.+4      	; 0xa94 <__utoa_common+0x14>
+ a90:	a4 1b       	sub	r26, r20
+ a92:	83 95       	inc	r24
+ a94:	50 51       	subi	r21, 0x10	; 16
+ a96:	b9 f7       	brne	.-18     	; 0xa86 <__utoa_common+0x6>
+ a98:	a0 5d       	subi	r26, 0xD0	; 208
+ a9a:	aa 33       	cpi	r26, 0x3A	; 58
+ a9c:	08 f0       	brcs	.+2      	; 0xaa0 <__utoa_common+0x20>
+ a9e:	a9 5d       	subi	r26, 0xD9	; 217
+ aa0:	a1 93       	st	Z+, r26
+ aa2:	00 97       	sbiw	r24, 0x00	; 0
+ aa4:	79 f7       	brne	.-34     	; 0xa84 <__utoa_common+0x4>
+ aa6:	b1 11       	cpse	r27, r1
+ aa8:	b1 93       	st	Z+, r27
+ aaa:	11 92       	st	Z+, r1
+ aac:	cb 01       	movw	r24, r22
+ aae:	0c 94 59 05 	jmp	0xab2	; 0xab2 <strrev>
+
+00000ab2 <strrev>:
+ ab2:	dc 01       	movw	r26, r24
+ ab4:	fc 01       	movw	r30, r24
+ ab6:	67 2f       	mov	r22, r23
+ ab8:	71 91       	ld	r23, Z+
+ aba:	77 23       	and	r23, r23
+ abc:	e1 f7       	brne	.-8      	; 0xab6 <strrev+0x4>
+ abe:	32 97       	sbiw	r30, 0x02	; 2
+ ac0:	04 c0       	rjmp	.+8      	; 0xaca <strrev+0x18>
+ ac2:	7c 91       	ld	r23, X
+ ac4:	6d 93       	st	X+, r22
+ ac6:	70 83       	st	Z, r23
+ ac8:	62 91       	ld	r22, -Z
+ aca:	ae 17       	cp	r26, r30
+ acc:	bf 07       	cpc	r27, r31
+ ace:	c8 f3       	brcs	.-14     	; 0xac2 <strrev+0x10>
+ ad0:	08 95       	ret
+
+00000ad2 <_exit>:
+ ad2:	f8 94       	cli
+
+00000ad4 <__stop_program>:
+ ad4:	ff cf       	rjmp	.-2      	; 0xad4 <__stop_program>
